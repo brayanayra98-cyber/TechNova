@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>TechNova - Mi Carrito</title>
+  <link rel="stylesheet" href="https://jsdelivr.net">
+  <link rel="stylesheet" href="estilos_descuento.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="menu-izq">
+      <a href="index.html">
+        <img src="img/technova_logo_5.png" alt="TECHNOVA">
+      </a>
+      <a href="Componentes.html">Componentes para PC</a>
+      <a href="Descuentos.html">Novedades</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+    <div class="busqueda">
+      <input type="text" id="buscar" placeholder="Buscar productos...">
+      <button type="button" id="btn-buscar" title="Buscar" onclick="window.location.href='Componentes.html'">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+    <div class="menu-der">
+      <a href="#" class="usuario">Inicia sesión / regístrate <i class="bi bi-person"></i></a>
+      <a href="carrito.html" title="Mi carrito" class="carrito"><i class="bi bi-cart"></i><span id="carrito-n" class="carrito-n" hidden>0</span></a>
+    </div>
+  </header>
+
+  <div class="titulo-seccion">
+    <h1><i class="bi bi-cart"></i> MI CARRITO</h1>
+    <p style="color: #ccc;">Revisa tus productos antes de continuar la compra</p>
+  </div>
+
+  <main class="contenedor-carrito">
+    <div>
+      <div class="caja-oscura" id="contenedor-productos"></div>
+      <a href="Componentes.html" class="btn-volver">← Seguir comprando</a>
+    </div>
+
+    <div class="caja-oscura">
+      <h3>RESUMEN DEL PEDIDO:</h3>
+      <hr style="border-color: #444; margin: 15px 0;">
+      <div class="resumen-linea">
+        <span id="texto-cantidad">Subtotal (0 productos)</span>
+        <span id="subtotal-general">S/ 0.00</span>
+      </div>
+      <div class="resumen-linea">
+        <span>Descuento</span>
+        <span id="descuento">- S/ 0.00</span>
+      </div>
+      <div class="resumen-linea">
+        <span>Envío (Envío gratis)</span>
+        <span>S/ 0.00</span>
+      </div>
+      <hr style="border-color: #444; margin: 15px 0;">
+      <div>Total</div>
+      <div class="total-final" id="total-pagar">S/ 0.00</div>
+      <button class="btn-rojo" style="width: 100%;" onclick="finalizarCompra()">FINALIZAR COMPRA</button>
+    </div>
+  </main>
+
+  <footer class="pie">
+    <div class="pie-columnas">
+      <div class="pie-c">
+        <h4>INICIO</h4>
+        <a href="Componentes.html">Componentes</a>
+        <a href="#">Accesorios</a>
+        <a href="Descuentos.html">Descuentos</a>
+      </div>
+      <div class="pie-c">
+        <h4>SOPORTE</h4>
+        <a href="contacto.html">Contáctanos</a>
+        <a href="#">Devoluciones</a>
+        <a href="#">Opciones de pago</a>
+        <a href="#">Estado del pedido</a>
+      </div>
+      <div class="pie-c">
+        <h4>EMPRESA</h4>
+        <a href="#">Sobre nosotros</a>
+        <a href="#">Comentarios</a>
+        <a href="#">Blog</a>
+      </div>
+      <div class="pie-contacto">
+        <h4>CONTACTO</h4>
+        <p><i class="bi bi-telephone"></i> +51 912 234 789</p>
+        <p><i class="bi bi-envelope"></i> technova_pe@gmail.com</p>
+        <div class="redes">
+          <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+        </div>
+      </div>
+    </div>
+    <p class="pie-copyright">TechNova - Derechos Reservados 2026</p>
+  </footer>
+
+  <script src="js_carrito_contacto.js"></script>
+</body>
+</html>

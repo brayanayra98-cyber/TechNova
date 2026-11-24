@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>TechNova - Contacte con Nosotros</title>
+  <link rel="stylesheet" href="https://jsdelivr.net">
+  <link rel="stylesheet" href="estilos_descuento.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="menu-izq">
+      <a href="index.html">
+        <img src="img/technova_logo_5.png" alt="TECHNOVA">
+      </a>
+      <a href="Componentes.html">Componentes para PC</a>
+      <a href="Descuentos.html">Novedades</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+    <div class="busqueda">
+      <input type="text" id="buscar" placeholder="Buscar productos...">
+      <button type="button" id="btn-buscar" title="Buscar" onclick="window.location.href='Componentes.html'">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+    <div class="menu-der">
+      <a href="#" class="usuario">Inicia sesión / regístrate <i class="bi bi-person"></i></a>
+      <a href="carrito.html" title="Mi carrito" class="carrito"><i class="bi bi-cart"></i><span id="carrito-n" class="carrito-n" hidden>0</span></a>
+    </div>
+  </header>
+
+  <main class="contenedor-contacto">
+    <div>
+      <h1 style="margin-bottom: 15px;">Contacte con Nosotros</h1>
+      <div class="caja-oscura">
+        <p style="margin-bottom: 20px; color: #ddd;">
+          Póngase en contacto con el equipo de Technova por teléfono o con nuestros asesores de venta, también puede enviarnos un mensaje.
+        </p>
+
+        <form id="form-contacto">
+          <div class="fila-inputs">
+            <div class="grupo-input">
+              <label for="nombres">Nombres</label>
+              <input type="text" id="nombres" required>
+            </div>
+            <div class="grupo-input">
+              <label for="apellido">Apellido</label>
+              <input type="text" id="apellido" required>
+            </div>
+          </div>
+
+          <div class="fila-inputs">
+            <div class="grupo-input">
+              <label for="correo">Correo</label>
+              <input type="email" id="correo" required>
+            </div>
+            <div class="grupo-input">
+              <label for="telefono">Teléfono</label>
+              <input type="tel" id="telefono" required>
+            </div>
+          </div>
+
+          <div class="grupo-input" style="width: 48%;">
+            <label for="asunto">Asunto</label>
+            <input type="text" id="asunto" required>
+          </div>
+
+          <div class="grupo-input">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" rows="5" required></textarea>
+          </div>
+
+          <button type="submit" class="btn-rojo">Enviar mensaje</button>
+        </form>
+      </div>
+    </div>
+
+    <div>
+      <div class="caja-oscura">
+        <h3>Conoce nuestras tiendas físicas en Lima</h3>
+        <div class="tienda-info">
+          <p style="font-size: 0.9rem; width: 40%;">
+            Visita nuestras tiendas y encuentra el producto ideal para ti.
+          </p>
+          <iframe class="mapa-box" 
+            src="https://google.com" 
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+
+      <div class="redes-sociales">
+        <a href="#" class="icono-red" style="background: #000; border: 1px solid #444;"><i class="bi bi-tiktok"></i></a>
+        <a href="#" class="icono-red" style="background: #1877F2;"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="icono-red" style="background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);"><i class="bi bi-instagram"></i></a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="pie">
+    <div class="pie-columnas">
+      <div class="pie-c">
+        <h4>INICIO</h4>
+        <a href="Componentes.html">Componentes</a>
+        <a href="#">Accesorios</a>
+        <a href="Descuentos.html">Descuentos</a>
+      </div>
+      <div class="pie-c">
+        <h4>SOPORTE</h4>
+        <a href="contacto.html">Contáctanos</a>
+        <a href="#">Devoluciones</a>
+        <a href="#">Opciones de pago</a>
+        <a href="#">Estado del pedido</a>
+      </div>
+      <div class="pie-c">
+        <h4>EMPRESA</h4>
+        <a href="#">Sobre nosotros</a>
+        <a href="#">Comentarios</a>
+        <a href="#">Blog</a>
+      </div>
+      <div class="pie-contacto">
+        <h4>CONTACTO</h4>
+        <p><i class="bi bi-telephone"></i> +51 912 234 789</p>
+        <p><i class="bi bi-envelope"></i> technova_pe@gmail.com</p>
+        <div class="redes">
+          <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+        </div>
+      </div>
+    </div>
+    <p class="pie-copyright">TechNova - Derechos Reservados 2026</p>
+  </footer>
+
+  <script src="js_carrito_contacto.js"></script>
+</body>
+</html>
