@@ -447,120 +447,140 @@ input:focus-visible {
   outline: 3px solid #ff8000;
   outline-offset: 3px;
 }
-
-/* responsive */
 /* =========================================
    DISEÑO RESPONSIVE (TABLETS Y CELULARES)
    ========================================= */
+/* ================= RESPONSIVE: NAVBAR + FOOTER ================= */
+img { max-width: 100%; }
+body { overflow-x: hidden; }
 
-/* 1. Pantallas medianas y Tablets (hasta 1024px) */
 @media (max-width: 1024px) {
-    .promo {
-        margin: 20px;
-        padding: 30px 40px;
-    }
-
-    .promo_img {
-        margin-right: 0;
-        max-width: 240px;
-    }
-
-    .buscador {
-        padding: 0 20px;
-    }
-
-    /* Cambia de 4 columnas a 3 columnas */
-    .productos_grid {
-        grid-template-columns: repeat(3, 1fr) !important;
-    }
+  .navbar { padding: 0 20px; font-size: 15px; }
+  .menu-izq, .menu-der { gap: 18px; }
+  .pie { padding: 50px 30px 20px; }
+  .pie-columnas { gap: 30px; }
 }
 
-/* 2. Tablets verticales y celulares grandes (hasta 768px) */
+@media (max-width: 900px) {
+  .navbar {
+    height: auto;
+    flex-wrap: wrap;
+    padding: 12px 20px;
+    row-gap: 12px;
+  }
+  .menu-izq { flex-wrap: wrap; }
+  /* el buscador pasa a una fila propia */
+  .busqueda {
+    order: 3;
+    width: 100%;
+    display: flex;
+  }
+  .busqueda input {
+    width: 100%;
+    min-width: 0;
+    height: 40px;
+    font-size: 16px;
+  }
+  .busqueda button { height: 40px; }
+}
+
 @media (max-width: 768px) {
-    /* Header y barra de navegación apilados */
-    header {
-        padding: 15px;
-    }
-
-    .navegacion {
-        flex-direction: column;
-        gap: 15px;
-        padding: 10px;
-    }
-
-    .left, .right {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-    }
-
-    /* Banner promocional vertical */
-    .promo {
-        flex-direction: column;
-        text-align: center;
-        padding: 25px 20px;
-        gap: 20px;
-    }
-
-    .promo_titulo {
-        margin: 0 auto 10px auto;
-    }
-
-    .promo_subtitulo, .promo_descuento {
-        margin-left: 0;
-        justify-content: center;
-    }
-
-    .porcentaje {
-        font-size: 56px;
-    }
-    .promo_img{
-        width: 800px;;
-    }
-    /* Contenedor principal: el menú lateral pasa arriba */
-    .buscador {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    aside {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    /* Cuadros de ofertas uno debajo del otro */
-    .ofertas {
-        flex-direction: column;
-    }
-
-    /* Cambia a 2 columnas en la grilla de productos */
-    .productos_grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-    }
+  .pie-columnas { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* 3. Celulares pequeños (hasta 480px) */
+@media (max-width: 600px) {
+  .menu-izq { gap: 14px; font-size: 14px; }
+  /* oculta el texto "Inicia sesión / regístrate" y deja solo el icono */
+  .usuario { font-size: 0; gap: 0; }
+  .menu-der .usuario i { font-size: 24px; }
+}
+
 @media (max-width: 480px) {
-    .buscar {
-        width: 100%;
-        justify-content: center;
-    }
+  .pie { padding: 40px 20px 20px; margin-top: 40px; }
+  .pie-columnas { grid-template-columns: 1fr; gap: 25px; }
+  .pie h4 { font-size: 18px; margin-bottom: 14px; }
+  .pie-c a, .pie-contacto p { font-size: 15px; margin-bottom: 10px; }
+  .redes { flex-wrap: wrap; }
+  .pie-copyright { font-size: 14px; }
+}
+/* ================= RESPONSIVE: DESCUENTOS ================= */
+@media (max-width: 1300px) {
+  .promo_img { margin-right: 120px; }
+}
 
-    .caja {
-        width: 100%;
-        max-width: 220px;
-    }
+@media (max-width: 1024px) {
+  .promo {
+    margin: 20px;
+    padding: 30px 40px;
+  }
+  .promo_titulo { font-size: 28px; }
+  .promo_subtitulo { font-size: 24px; }
+  .promo_descuento { margin-left: 40px; }
+  .porcentaje { font-size: 64px; }
+  .promo_img { margin-right: 0; max-width: 300px; }
 
-    .porcentaje {
-        font-size: 44px;
-    }
+  .buscador { padding: 0 20px; gap: 20px; }
+  aside { width: 220px; max-width: 220px; }
+  .bus_desl input[type="range"] { width: 100%; }
 
-    .texto_desc {
-        font-size: 20px;
-    }
+  .productos_grid { grid-template-columns: repeat(3, 1fr) !important; }
+}
 
-    /* 1 sola columna para que las tarjetas respiren bien xd*/
-    .productos_grid {
-        grid-template-columns: 1fr !important;
-    }
+@media (max-width: 768px) {
+  .promo {
+    flex-direction: column;
+    text-align: center;
+    padding: 25px 20px;
+    gap: 20px;
+  }
+  .promo_texto { align-items: center; }
+  .promo_titulo { font-size: 24px; }
+  .promo_subtitulo { margin: 0; font-size: 22px; }
+  .promo_descuento {
+    margin: 0;
+    justify-content: center;
+  }
+  .porcentaje { font-size: 56px; }
+  .texto_desc { font-size: 22px; }
+  .promo_img { width: 100%; max-width: 320px; margin: 0; }
+  .promo_img img { height: auto; max-height: 180px; object-fit: contain; }
+
+  /* filtros arriba, productos abajo */
+  .buscador {
+    flex-direction: column;
+    align-items: stretch;
+    font-size: 17px;
+  }
+  aside { width: 100%; max-width: 100%; }
+  .bus_opcion { flex-direction: row; flex-wrap: wrap; gap: 10px 20px; }
+  .bus_opcion label { width: auto; }
+
+  .ofertas { flex-direction: column; font-size: 18px; }
+  .ofer_1, .ofer_2 { height: auto; min-height: 160px; }
+  .badge { font-size: 16px; padding: 6px 12px; }
+
+  .productos_grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+@media (max-width: 480px) {
+  .promo {
+    margin: 15px;
+    padding: 20px 15px;
+    border-radius: 25px;
+  }
+  .promo_titulo { font-size: 20px; }
+  .porcentaje { font-size: 44px; }
+  .texto_desc { font-size: 20px; }
+
+  .buscador { padding: 0 15px; }
+  .ofer_1, .ofer_2 {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 50px 15px 20px;
+  }
+  .ofer_1 h3, .ofer_2 h3 { font-size: 17px; }
+  .badge { top: 10px; right: 10px; }
+
+  .productos_grid { grid-template-columns: 1fr !important; }
 }
