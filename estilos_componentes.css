@@ -82,7 +82,7 @@ a {
 }
 
 /* Diseño de cada tarjeta */
-.tarjeta-componente {
+a.tarjeta-componente.producto_tarjeta {
     background-image: url(img/fondo.jpg);
     background-size: 950px;
     color: #ffffff;
@@ -94,7 +94,10 @@ a {
     text-align: center;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
-
+a.tarjeta-componente.producto_tarjeta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px #a37906;
+}
 /* Recuadro blanco de la imagen */
 .tarjeta-img {
     background-color: #ffffff;
