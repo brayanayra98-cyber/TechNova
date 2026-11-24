@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechNova - Página principal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+
+    <!-- ============ BARRA DE NAVEGACIÓN ============ -->
+    <header class="navbar">
+        <div class="menu-izq">
+            <a href="principal.html">
+                <img src="img/technova_logo_5.png" alt="TECHNOVA">
+            </a>
+            <a href="#">Componentes para PC</a>
+            <a href="#">Novedades</a>
+        </div>
+        <div class="busqueda">
+            <input type="text" id="buscar" placeholder="Buscar productos...">
+            <button type="button" id="btn-buscar" title="Buscar">
+                <i class="bi bi-search"></i>
+            </button>
+        </div>
+        <div class="menu-der">
+            <a href="#" class="usuario">Inicia sesión / regístrate <i class="bi bi-person"></i></a>
+            <a href="#" title="Mi carrito" class="carrito"><i class="bi bi-cart"></i><span id="carrito-n" class="carrito-n" hidden>0</span></a>
+        </div>
+    </header>
+
+    <!-- ============ BANNER PRINCIPAL ============ -->
+    <section class="banner">
+        <div class="fila-img">
+            <a href="#" class="slide">
+                <img src="img/bannerimg.png" alt="Descuentos en componentes">
+            </a>    
+            <a href="#" class="slide">
+                <img src="img/banner2.png" alt="Redragon banner">
+            </a>
+            <a href="#" class="slide">
+                <img src="img/banner3.png" alt="Compras seguras">
+            </a>
+            <a href="#" class="slide">
+                <img src="img/banner4.png" alt="Tarjetas Nvidia">
+            </a>
+        </div>
+        <button class="flecha-img izq" title="Imagen anterior"><i class="bi bi-chevron-left"></i></button>
+        <button class="flecha-img der" title="Imagen siguiente"><i class="bi bi-chevron-right"></i></button>
+        <div class="puntos-img"></div>
+    </section>
+
+    <main class="contenido">
+
+        <!-- ============ MARCAS ============ -->
+        <section class="marcas">
+            <a href="#" class="marca"><img src="img/razer.png" alt="Razer"><p>Razer</p></a>
+            <a href="#" class="marca"><img src="img/redragon.png" alt="Redragon"><p>Redragon</p></a>
+            <a href="#" class="marca"><img src="img/logitech.png" alt="Logitech"><p>Logitech</p></a>
+            <a href="#" class="marca"><img src="img/corsair.png" alt="Corsair"><p>Corsair</p></a>
+            <a href="#" class="marca"><img src="img/nvidia.png" alt="Nvidia"><p>Nvidia</p></a>
+            <a href="#" class="marca"><img src="img/intel.png" alt="Intel"><p>Intel</p></a>
+            <a href="#" class="marca"><img src="img/asus.png" alt="Asus"><p>Asus</p></a>
+            <a href="#" class="marca"><img src="img/kingston.png" alt="Kingston"><p>Kingston</p></a>
+        </section>
+
+        <!-- ============ CATEGORÍAS ============ -->
+        <section class="categorias">
+            <h2>EXPLORA LAS CATEGORÍAS</h2>
+            <div class="tarjetas">
+                <a href="#" class="tarjeta">
+                    <img src="img/componentes.png" alt="Componentes">
+                    <div class="tarjeta-info">
+                        <span class="icono"><i class="bi bi-pc-display-horizontal"></i></span>
+                        <div>
+                            <h3>COMPONENTES <i class="bi bi-arrow-right"></i></h3>
+                            <p>Todo lo que necesitas para tu pc.</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="tarjeta">
+                    <img src="img/accesorios.png" alt="Accesorios">
+                    <div class="tarjeta-info">
+                        <span class="icono"><i class="bi bi-headset"></i></span>
+                        <div>
+                            <h3>ACCESORIOS <i class="bi bi-arrow-right"></i></h3>
+                            <p>Mejora tu experiencia de juego.</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="tarjeta">
+                    <img src="img/combos.png" alt="Combos" >
+                    <div class="tarjeta-info">
+                        <span class="icono"><i class="bi bi-tags-fill"></i></span>
+                        <div>
+                            <h3>COMBOS <i class="bi bi-arrow-right"></i></h3>
+                            <p>Ahorra más en tus compras.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- ============ ARMA TU PC ============ -->
+        <section class="armador">
+            <h2 class="pildora">ARMA TU PC</h2>
+            <div class="armador-caja">
+                <div class="armador-piezas">
+                    <label for="pc-cpu">Procesador
+                        <select id="pc-cpu" data-pieza="Procesador">
+                        <option value="">Elige una opción</option>
+                        <option data-precio="329" data-socket="LGA1700" data-watts="58">Intel Core i3-12100F</option>
+                        <option data-precio="559" data-socket="LGA1700" data-watts="65">Intel Core i5-12400F</option>
+                        <option data-precio="889" data-socket="AM5" data-watts="65">AMD Ryzen 5 7600</option>
+                        <option data-precio="1199" data-socket="AM5" data-watts="65">AMD Ryzen 7 7700</option>
+                        </select>
+                    </label>
+                    <label for="pc-placa">Placa madre
+                        <select id="pc-placa" data-pieza="Placa madre">
+                        <option value="">Elige una opción</option>
+                        <option data-precio="359" data-socket="LGA1700" data-ddr="DDR4">ASUS Prime H610M-K (LGA1700, DDR4)</option>
+                        <option data-precio="579" data-socket="LGA1700" data-ddr="DDR5">MSI Pro B760M-P (LGA1700, DDR5)</option>
+                        <option data-precio="459" data-socket="AM5" data-ddr="DDR5">ASUS Prime A620M-K (AM5, DDR5)</option>
+                        <option data-precio="689" data-socket="AM5" data-ddr="DDR5">Gigabyte B650M (AM5, DDR5)</option>
+                        </select>
+                    </label>
+                    <label for="pc-ram">Memoria RAM
+                        <select id="pc-ram" data-pieza="Memoria RAM">
+                        <option value="">Elige una opción</option>
+                        <option data-precio="189" data-ddr="DDR4">Kingston Fury Beast 16GB DDR4</option>
+                        <option data-precio="329" data-ddr="DDR4">Kingston Fury Beast RGB 32GB DDR4</option>
+                        <option data-precio="459" data-ddr="DDR5">Corsair Vengeance 32GB (2x16) DDR5</option>
+                        <option data-precio="849" data-ddr="DDR5">Corsair Vengeance 64GB (2x32) DDR5</option>
+                        </select>
+                    </label>
+                    <label for="pc-gpu">Tarjeta de video
+                        <select id="pc-gpu" data-pieza="Tarjeta de video">
+                        <option value="">Elige una opción</option>
+                        <option data-precio="749" data-watts="70">NVIDIA GeForce RTX 3050 6GB</option>
+                        <option data-precio="1229" data-watts="115">NVIDIA GeForce RTX 4060 8GB</option>
+                        <option data-precio="1599" data-watts="145">NVIDIA GeForce RTX 5060 8GB</option>
+                        <option data-precio="2599" data-watts="250">NVIDIA GeForce RTX 5070 12GB</option>
+                        </select>
+                    </label>
+                    <label for="pc-ssd">Almacenamiento
+                        <select id="pc-ssd" data-pieza="Almacenamiento">
+                        <option value="">Elige una opción</option>
+                        <option data-precio="159" >SSD Kingston NV2 500GB</option>
+                        <option data-precio="249" >SSD Kingston NV2 1TB</option>
+                        <option data-precio="459" >SSD Kingston NV2 2TB</option>
+                        </select>
+                    </label>
+                    <label for="pc-fuente">Fuente de poder
+                        <select id="pc-fuente" data-pieza="Fuente de poder">
+                        <option value="">Elige una opción</option>
+                        <option data-precio="189" data-watts="500">Fuente 500W 80+ Bronze</option>
+                        <option data-precio="259" data-watts="650">Fuente 650W 80+ Bronze</option>
+                        <option data-precio="329" data-watts="750">Fuente 750W 80+ Gold</option>
+                        <option data-precio="619" data-watts="1000">MSI MAG A1000GL 1000W</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="armador-resumen">
+                    <h3>Tu configuración</h3>
+                    <ul id="pc-lista" class="armador-lista"></ul>
+                    <p class="armador-total">Total: <strong id="pc-total">S/ 0.00</strong></p>
+                    <p id="pc-estado" class="armador-estado espera" aria-live="polite"></p>
+                    <div class="armador-botones">
+                        <button type="button" id="pc-anadir" class="btn-armador" disabled>Añadir al carrito</button>
+                        <button type="button" id="pc-reiniciar" class="btn-armador btn-claro">Reiniciar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ LOS MEJORES DESCUENTOS ============ -->
+        <section class="descuentos">
+            <h2 class="pildora">LOS MEJORES DESCUENTOS</h2>
+            <div class="carrusel">
+                <button class="flecha" aria-label="Ver anteriores"><i class="bi bi-arrow-left"></i></button>
+                <div class="productos">
+                    <a href="#" class="producto_vendido">
+                        <div class="producto">
+                        <span class="descuento-etiqueta">-33%</span>
+                            <img src="img/DESCUENTOS/descuento1.jpg" alt="MEMORIA DDR4 32GB 3200 CL16 FURY BEAST RGB">
+                        </div>
+                        <div class="producto-datos">
+                            <p class="producto-meta"><span>Kingston</span><span>014101</span></p>
+                            <p class="producto-nombre">MEMORIA DDR4 32GB 3200 CL16 FURY BEAST RGB</p>
+                            <div class="producto-precio"><strong>S/ 2,559.00</strong><s>S/ 3,839.00</s></div>
+                            <p class="precio-oferta">¡Oferta Online!</p>
+                        </div>
+                    </a>
+                    <a href="#" class="producto_vendido">
+                        <div class="producto">
+                        <span class="descuento-etiqueta">-50%</span>
+                            <img src="img/DESCUENTOS/descuento2.png" alt="Procesador Intel Core Ultra S">
+                        </div>
+                        <div class="producto-datos">
+                            <p class="producto-meta"><span>Intel</span><span>014102</span></p>
+                            <p class="producto-nombre">PROCESADOR INTEL CORE I3-12100F 4 NÚCLEOS 3.3 GHZ HASTA 4.3 GHZ LGA1700 SIN GRÁFICOS CON COOLER</p>
+                            <div class="producto-precio"><strong>S/ 525.00</strong><s>S/ 1,046.00</s></div>
+                            <p class="precio-oferta">¡Oferta Online!</p>
+                        </div>
+                    </a>
+                    <a href="#" class="producto_vendido">
+                        <div class="producto">
+                        <span class="descuento-etiqueta">-20%</span>
+                            <img src="img/DESCUENTOS/descuento3.png" alt="Wisper C 120 12V">
+                        </div>
+                        <div class="producto-datos">
+                            <p class="producto-meta"><span>Marca</span><span>014103</span></p>
+                            <p class="producto-nombre">SSD SOLIDO 1TB KINGSTON NV2 M.2 2280 NVME PCIE GEN 4.0 (SNV2S/1000G)</p>
+                            <div class="producto-precio"><strong>S/ 553.32</strong><s>S/ 691.65</s></div>
+                            <p class="precio-oferta">¡Oferta Online!</p>
+                        </div>
+                    </a>
+                    <a href="#" class="producto_vendido">
+                        <div class="producto">
+                        <span class="descuento-etiqueta">-25%</span>
+                            <img src="img/DESCUENTOS/descuento4.png" alt="Teclado Gamer Sxtech Iluminado">
+                        </div>
+                        <div class="producto-datos">
+                            <p class="producto-meta"><span>Marca</span><span>014104</span></p>
+                            <p class="producto-nombre">Teclado Gamer Sxtech Iluminado</p>
+                            <div class="producto-precio"><strong>S/ 67.43</strong><s>S/ 89.90</s></div>
+                            <p class="precio-oferta">¡Oferta Online!</p>
+                        </div>
+                    </a>
+                    <a href="#" class="producto_vendido">
+                        <div class="producto">
+                        <span class="descuento-etiqueta">-10%</span>
+                            <img src="img/DESCUENTOS/descuento5.png" alt="Producto en descuento 5">
+                        </div>
+                        <div class="producto-datos">
+                            <p class="producto-meta"><span>Marca</span><span>014105</span></p>
+                            <p class="producto-nombre">Producto en descuento 5</p>
+                            <div class="producto-precio"><strong>S/ 179.10</strong><s>S/ 199.00</s></div>
+                            <p class="precio-oferta">¡Oferta Online!</p>
+                        </div>
+                    </a>
+                    <a href="#" class="producto_vendido">
+                        <div class="producto">
+                        <span class="descuento-etiqueta">-15%</span>
+                            <img src="img/DESCUENTOS/descuento6.png" alt="Producto en descuento 6">
+                        </div>
+                        <div class="producto-datos">
+                            <p class="producto-meta"><span>Marca</span><span>014106</span></p>
+                            <p class="producto-nombre">Producto en descuento 6</p>
+                            <div class="producto-precio"><strong>S/ 390.15</strong><s>S/ 459.00</s></div>
+                            <p class="precio-oferta">¡Oferta Online!</p>
+                        </div>
+                    </a>
+                    <a href="#" class="producto_vendido">
+                        <div class="producto">
+                        <span class="descuento-etiqueta">-18%</span>
+                            <img src="img/DESCUENTOS/descuento7.png" alt="Producto en descuento 7">
+                        </div>
+                        <div class="producto-datos">
+                            <p class="producto-meta"><span>Marca</span><span>014107</span></p>
+                            <p class="producto-nombre">Producto en descuento 7</p>
+                            <div class="producto-precio"><strong>S/ 737.18</strong><s>S/ 899.00</s></div>
+                            <p class="precio-oferta">¡Oferta Online!</p>
+                        </div>
+                    </a>
+                    <a href="#" class="producto_vendido">
+                        <div class="producto">
+                        <span class="descuento-etiqueta">-20%</span>
+                            <img src="img/DESCUENTOS/descuento8.png" alt="Producto en descuento 8">
+                        </div>
+                        <div class="producto-datos">
+                            <p class="producto-meta"><span>Marca</span><span>014108</span></p>
+                            <p class="producto-nombre">Producto en descuento 8</p>
+                            <div class="producto-precio"><strong>S/ 959.20</strong><s>S/ 1,199.00</s></div>
+                            <p class="precio-oferta">¡Oferta Online!</p>
+                        </div>
+                    </a>
+                    <a href="#" class="producto_vendido">
+                        <div class="producto">
+                        <span class="descuento-etiqueta">-30%</span>
+                            <img src="img/DESCUENTOS/descuento9.png" alt="Producto en descuento 9">
+                        </div>
+                        <div class="producto-datos">
+                            <p class="producto-meta"><span>Marca</span><span>014109</span></p>
+                            <p class="producto-nombre">Producto en descuento 9</p>
+                            <div class="producto-precio"><strong>S/ 244.30</strong><s>S/ 349.00</s></div>
+                            <p class="precio-oferta">¡Oferta Online!</p>
+                        </div>
+                    </a>
+                    <a href="#" class="producto_vendido">
+                        <div class="producto">
+                        <span class="descuento-etiqueta">-12%</span>
+                            <img src="img/DESCUENTOS/descuento10.png" alt="Producto en descuento 10">
+                        </div>
+                        <div class="producto-datos">
+                            <p class="producto-meta"><span>Marca</span><span>014110</span></p>
+                            <p class="producto-nombre">Producto en descuento 10</p>
+                            <div class="producto-precio"><strong>S/ 1,935.12</strong><s>S/ 2,199.00</s></div>
+                            <p class="precio-oferta">¡Oferta Online!</p>
+                        </div>
+                    </a>
+                </div>
+                <button class="flecha" aria-label="Ver siguientes"><i class="bi bi-arrow-right"></i></button>
+            </div>
+        </section>
+
+        <!-- ============ MÁS VENDIDOS  ============ -->
+        <section class="vendidos">
+            <h2 class="pildora">MÁS VENDIDOS</h2>
+            <div class="carrusel">
+                <button class="flecha" aria-label="Ver anteriores"><i class="bi bi-arrow-left"></i></button>
+                <div class="productos">
+                    <a href="#" class="producto_vendido">
+                        <div class="producto">
+                            <img src="img/vendido1.png" alt="Fuente de poder MSI MAG A1000GL5...">
+                        </div>
+                        <div class="producto-datos">
+                            <p class="producto-meta"><span>MSI</span><span>013401</span></p>
+                            <p class="producto-nombre">Fuente de poder MSI MAG A1000GL5...</p>
+                            <div class="producto-precio"><span class="precio-etiqueta">PRECIO ONLINE</span><strong>S/ 619.90</strong></div>
+                            <p class="precio-regular">Regular: S/ 689.90</p>
+                        </div>
+                    </a>
+                    <a href="#" class="producto_vendido">
+                        <div class="producto">
+                            <img src="img/vendido2.png" alt="Procesador Intel Core i3-12100F 3.3GHz">
+                        </div>
+                        <div class="producto-datos">
+                            <p class="producto-meta"><span>Intel</span><span>013402</span></p>
+                            <p class="producto-nombre">Procesador Intel Core i3-12100F 3.3GHz</p>
+                            <div class="producto-precio"><span class="precio-etiqueta">PRECIO ONLINE</span><strong>S/ 329.00</strong></div>
+                            <p class="precio-regular">Regular: S/ 369.00</p>
+                        </div>
+                    </a>
+                    <a href="#" class="producto_vendido">
+                        <div class="producto">
+                            <img src="img/vendido3.png" alt="Teclado de membrana GAMER K500F">
+                        </div>
+                        <div class="producto-datos">
+                            <p class="producto-meta"><span>Redragon</span><span>013403</span></p>
+                            <p class="producto-nombre">Teclado de membrana GAMER K500F</p>
+                            <div class="producto-precio"><span class="precio-etiqueta">PRECIO ONLINE</span><strong>S/ 119.90</strong></div>
+                            <p class="precio-regular">Regular: S/ 139.90</p>
+                        </div>
+                    </a>
+                    <a href="#" class="producto_vendido">
+                        <div class="producto">
+                            <img src="img/vendido4.png" alt="Memoria 64GB (32GBx2) DDR5 Corsair...">
+                        </div>
+                        <div class="producto-datos">
+                            <p class="producto-meta"><span>Corsair</span><span>013404</span></p>
+                            <p class="producto-nombre">Memoria 64GB (32GBx2) DDR5 Corsair...</p>
+                            <div class="producto-precio"><span class="precio-etiqueta">PRECIO ONLINE</span><strong>S/ 849.00</strong></div>
+                            <p class="precio-regular">Regular: S/ 949.00</p>
+                        </div>
+                    </a>
+                    <a href="#" class="producto_vendido">
+                        <div class="producto">
+                            <img src="img/vendido5.png" alt="Producto más vendido 5">
+                        </div>
+                        <div class="producto-datos">
+                            <p class="producto-meta"><span>Marca</span><span>013405</span></p>
+                            <p class="producto-nombre">Producto más vendido 5</p>
+                            <div class="producto-precio"><span class="precio-etiqueta">PRECIO ONLINE</span><strong>S/ 249.00</strong></div>
+                            <p class="precio-regular">Regular: S/ 273.90</p>
+                        </div>
+                    </a>
+                    <a href="#" class="producto_vendido">
+                        <div class="producto">
+                            <img src="img/vendido6.png" alt="Producto más vendido 6">
+                        </div>
+                        <div class="producto-datos">
+                            <p class="producto-meta"><span>Marca</span><span>013406</span></p>
+                            <p class="producto-nombre">Producto más vendido 6</p>
+                            <div class="producto-precio"><span class="precio-etiqueta">PRECIO ONLINE</span><strong>S/ 399.00</strong></div>
+                            <p class="precio-regular">Regular: S/ 438.90</p>
+                        </div>
+                    </a>
+                    <a href="#" class="producto_vendido">
+                        <div class="producto">
+                            <img src="img/vendido7.png" alt="Producto más vendido 7">
+                        </div>
+                        <div class="producto-datos">
+                            <p class="producto-meta"><span>Marca</span><span>013407</span></p>
+                            <p class="producto-nombre">Producto más vendido 7</p>
+                            <div class="producto-precio"><span class="precio-etiqueta">PRECIO ONLINE</span><strong>S/ 1,099.00</strong></div>
+                            <p class="precio-regular">Regular: S/ 1,208.90</p>
+                        </div>
+                    </a>
+                    <a href="#" class="producto_vendido">
+                        <div class="producto">
+                            <img src="img/vendido8.png" alt="Producto más vendido 8">
+                        </div>
+                        <div class="producto-datos">
+                            <p class="producto-meta"><span>Marca</span><span>013408</span></p>
+                            <p class="producto-nombre">Producto más vendido 8</p>
+                            <div class="producto-precio"><span class="precio-etiqueta">PRECIO ONLINE</span><strong>S/ 179.90</strong></div>
+                            <p class="precio-regular">Regular: S/ 197.89</p>
+                        </div>
+                    </a>
+                    <a href="#" class="producto_vendido">
+                        <div class="producto">
+                            <img src="img/vendido9.png" alt="Producto más vendido 9">
+                        </div>
+                        <div class="producto-datos">
+                            <p class="producto-meta"><span>Marca</span><span>013409</span></p>
+                            <p class="producto-nombre">Producto más vendido 9</p>
+                            <div class="producto-precio"><span class="precio-etiqueta">PRECIO ONLINE</span><strong>S/ 529.00</strong></div>
+                            <p class="precio-regular">Regular: S/ 581.90</p>
+                        </div>
+                    </a>
+                    <a href="#" class="producto_vendido">
+                        <div class="producto">
+                            <img src="img/vendido10.png" alt="Producto más vendido 10">
+                        </div>
+                        <div class="producto-datos">
+                            <p class="producto-meta"><span>Marca</span><span>013410</span></p>
+                            <p class="producto-nombre">Producto más vendido 10</p>
+                            <div class="producto-precio"><span class="precio-etiqueta">PRECIO ONLINE</span><strong>S/ 2,399.00</strong></div>
+                            <p class="precio-regular">Regular: S/ 2,638.90</p>
+                        </div>
+                    </a>
+                </div>
+                <button class="flecha" aria-label="Ver siguientes"><i class="bi bi-arrow-right"></i></button>
+            </div>
+        </section>
+
+        <!-- ============ TECHNOVA EN NÚMEROS ============ -->
+        <section class="contadores" aria-label="TechNova en números">
+            <div class="contadores-fila">
+                <div class="contador"><strong data-meta="12000" data-prefijo="+" data-sufijo="">+12,000</strong><span>clientes satisfechos</span></div>
+                <div class="contador"><strong data-meta="850" data-prefijo="+" data-sufijo="">+850</strong><span>productos en catálogo</span></div>
+                <div class="contador"><strong data-meta="8" data-prefijo="" data-sufijo="">8</strong><span>marcas aliadas</span></div>
+                <div class="contador"><strong data-meta="98" data-prefijo="" data-sufijo="%">98%</strong><span>de satisfacción</span></div>
+            </div>
+        </section>
+
+        <!-- ============ RESEÑAS ============ -->
+        <section class="resenas">
+            <h2 class="pildora">LO QUE DICEN NUESTROS CLIENTES</h2>
+            <div class="carrusel" data-auto>
+                <button class="flecha" aria-label="Ver anteriores"><i class="bi bi-arrow-left"></i></button>
+                <div class="productos">
+                    <article class="resena">
+                        <div class="resena-estrellas"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                        <p>«Armé mi PC gamer con ellos y llegó todo en 48 horas, bien embalado. Rinde de maravilla.»</p>
+                        <footer><strong>Carlos M.</strong><small>Lima</small></footer>
+                    </article>
+                    <article class="resena">
+                        <div class="resena-estrellas"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                        <p>«Me ayudaron a elegir la fuente correcta para mi RTX. Atención rápida y precios claros.»</p>
+                        <footer><strong>Andrea R.</strong><small>Arequipa</small></footer>
+                    </article>
+                    <article class="resena">
+                        <div class="resena-estrellas"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                        <p>«Compré el combo de teclado y mouse. La calidad es muy buena para el precio.»</p>
+                        <footer><strong>Luis P.</strong><small>Trujillo</small></footer>
+                    </article>
+                    <article class="resena">
+                        <div class="resena-estrellas"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                        <p>«Tuve una consulta de garantía y la resolvieron el mismo día. Muy recomendados.»</p>
+                        <footer><strong>Valeria S.</strong><small>Cusco</small></footer>
+                    </article>
+                    <article class="resena">
+                        <div class="resena-estrellas"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                        <p>«Los descuentos son reales. Ahorré bastante en memoria RAM y SSD.»</p>
+                        <footer><strong>Jorge T.</strong><small>Piura</small></footer>
+                    </article>
+                    <article class="resena">
+                        <div class="resena-estrellas"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                        <p>«El armador de PC de la web me ahorró horas de dudas sobre compatibilidad.»</p>
+                        <footer><strong>Camila V.</strong><small>Lima</small></footer>
+                    </article>
+                </div>
+                <button class="flecha" aria-label="Ver siguientes"><i class="bi bi-arrow-right"></i></button>
+            </div>
+        </section>
+
+        <!-- ============ PREGUNTAS FRECUENTES Y SUSCRIPCIÓN ============ -->
+        <section class="faq">
+            <h2 class="pildora">PREGUNTAS FRECUENTES</h2>
+            <div class="faq-grid">
+                <div class="faq-lista">
+                    <div class="faq-item">
+                        <button type="button" class="faq-p" aria-expanded="false">¿Cuánto demora el envío?<i class="bi bi-plus-lg"></i></button>
+                        <div class="faq-r"><p>En Lima Metropolitana entregamos en 24 a 48 horas. A provincias, entre 3 y 5 días hábiles.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button type="button" class="faq-p" aria-expanded="false">¿Qué formas de pago aceptan?<i class="bi bi-plus-lg"></i></button>
+                        <div class="faq-r"><p>Tarjetas de crédito y débito, Yape, Plin y transferencia bancaria.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button type="button" class="faq-p" aria-expanded="false">¿Los productos tienen garantía?<i class="bi bi-plus-lg"></i></button>
+                        <div class="faq-r"><p>Sí. Todos incluyen garantía del fabricante o de la tienda. El tiempo depende del producto y se indica en su ficha.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button type="button" class="faq-p" aria-expanded="false">¿Puedo devolver un producto?<i class="bi bi-plus-lg"></i></button>
+                        <div class="faq-r"><p>Puedes solicitar una devolución dentro de los 7 días siguientes a la entrega, con el producto sin uso y en su empaque original.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button type="button" class="faq-p" aria-expanded="false">¿Me ayudan a elegir las piezas de mi PC?<i class="bi bi-plus-lg"></i></button>
+                        <div class="faq-r"><p>Claro. Usa el armador de esta página o escríbenos a technova_pe@gmail.com y te asesoramos.</p></div>
+                    </div>
+                </div>
+                <form class="suscripcion" id="form-suscripcion" novalidate>
+                    <h3>Entérate primero de las ofertas</h3>
+                    <p>Suscríbete y recibe descuentos y novedades en tu correo.</p>
+                    <input type="email" id="suscripcion-correo" placeholder="tucorreo@ejemplo.com" aria-label="Correo electrónico">
+                    <button type="submit" class="btn-armador">Suscribirme</button>
+                    <p id="suscripcion-msj" class="suscripcion-msj" aria-live="polite"></p>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============ PIE DE PÁGINA ============ -->
+    <footer class="pie">
+        <div class="pie-columnas">
+            <div class="pie-c">
+                <h4>INICIO</h4>
+                <a href="#">Componentes</a>
+                <a href="#">Accesorios</a>
+                <a href="#">Descuentos</a>
+            </div>
+            <div class="pie-c">
+                <h4>SOPORTE</h4>
+                <a href="#">Contáctanos</a>
+                <a href="#">Devoluciones</a>
+                <a href="#">Opciones de pago</a>
+                <a href="#">Estado del pedido</a>
+            </div>
+            <div class="pie-c">
+                <h4>EMPRESA</h4>
+                <a href="#">Sobre nosotros</a>
+                <a href="#">Comentarios</a>
+                <a href="#">Blog</a>
+            </div>
+            <div class="pie-contacto">
+                <h4>CONTACTO</h4>
+                <p><i class="bi bi-telephone"></i> +51 912 234 789</p>
+                <p><i class="bi bi-envelope"></i> technova_pe@gmail.com</p>
+                <div class="redes">
+                    <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        <p class="pie-copyright">TechNova - Derechos Reservados 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
