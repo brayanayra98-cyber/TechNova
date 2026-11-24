@@ -132,7 +132,7 @@ a {
     height: 200px;
     display: block;
 }
-/* buscador (check box) */
+/* buscador */
 .buscador{
     font-size: 19px;
     display: flex;
@@ -281,7 +281,8 @@ aside input[type="checkbox"] {
     box-sizing: border-box;
     gap: 8px;
     text-decoration: none; 
-    transition: transform 0.2s ease, box-shadow 0.2s ease; 
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    /* box-shadow: 0 5px 5px rgba(124, 40, 40, 0.6);  */
 }
 
 .producto_tarjeta:hover {
@@ -447,6 +448,7 @@ input:focus-visible {
   outline: 3px solid #ff8000;
   outline-offset: 3px;
 }
+
 /* =========================================
    DISEÑO RESPONSIVE (TABLETS Y CELULARES)
    ========================================= */
