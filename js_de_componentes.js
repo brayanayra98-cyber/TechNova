@@ -22,6 +22,7 @@ const listaComponentes = [
     { img: 'img/WD_Red_SA500_NAS_SATA_SSD_M.2_2280_-_500GB.png', nombre: "W A500 SATA SSD M2280 500GB", precio: 820 }
 ];
 
+// CREA LAS TARGETAS
 const contenedor = document.getElementById('contenedor_componentes');
 const inputBusqueda = document.getElementById('buscar'); // 1. Capturamos el buscador
 
@@ -39,7 +40,7 @@ function mostrarComponentes(productos) {
 
     productos.forEach(prod => {
         html += `
-            <div class="tarjeta-componente">
+            <div class="tarjeta-componente" href="#">
                 <div class="tarjeta-img">
                     <img src="${prod.img}" alt="${prod.nombre}">
                 </div>
@@ -57,7 +58,6 @@ function mostrarComponentes(productos) {
 
     contenedor.innerHTML = html;
 }
-
 // 2. Función que filtra mientras escribes
 inputBusqueda.addEventListener('input', () => {
     const texto = inputBusqueda.value.trim().toLowerCase();
