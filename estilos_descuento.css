@@ -132,7 +132,7 @@ a {
     height: 200px;
     display: block;
 }
-/* buscador */
+/* buscador (check box) */
 .buscador{
     font-size: 19px;
     display: flex;
@@ -149,8 +149,21 @@ aside{
     box-sizing: border-box;
     border: 5px;
     border-radius: 10px;
-    background-color: rgb(104, 104, 108);
+    background-color: #1e1e24;
     color: #ffffff;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+aside h2{
+    border-bottom: 2px solid;
+}
+aside label:hover, aside li:hover {
+  color: #60a5fa;
+}
+aside input[type="checkbox"] {
+  accent-color: #3b82f6;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
 }
 .bus_opcion {
     display:flex;
