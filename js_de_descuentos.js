@@ -1,6 +1,6 @@
 // Lista de productos
 const listadeProductos = [
-    { descuento: '-20%', img: 'img/IntelCore5.png', nombre: "INTEL CORE ULTRA 5", categoria: "Procesadores", precio: 1220 },
+    { descuento: '-20%', img: 'img/IntelCore5.png', nombre: "INTEL CORE ULTRA 7", categoria: "Procesadores", precio: 1520 },
     { descuento: '-15%', img: 'img/TecladoGamer.png', nombre: "TECLADO GAMER DRAGON X", categoria: "Accesorios", precio: 250 },
     { descuento: '-10%', img: 'img/ramDDR4.png', nombre: "MEMORIA RAM XPG 16Gb", categoria: "Memorias", precio: 570 },
     { descuento: '-5%', img: 'img/mause.png', nombre: "MOUSE GAMER INALÁMBRICO", categoria: "Accesorios", precio: 65 },
