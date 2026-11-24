@@ -22,48 +22,6 @@ const listaComponentes = [
     { img: 'img/WD_Red_SA500_NAS_SATA_SSD_M.2_2280_-_500GB.png', nombre: "W A500 SATA SSD M2280 500GB", precio: 820 }
 ];
 
-// const contenedor = document.getElementById('contenedor_componentes');
-// // Crea las targetas en html
-// function mostrarComponentes(productos) {
-//     let html = "";
-
-//     productos.forEach(prod => {
-//         html += `
-//             <div class="tarjeta-componente">
-//                 <div class="tarjeta-img">
-//                     <img src="${prod.img}" alt="${prod.nombre}">
-//                 </div>
-//                 <p class="tarjeta-titulo">${prod.nombre}</p>
-//                 <div class="tarjeta-pie">
-//                     <span class="tarjeta-precio">S/ ${prod.precio}</span>
-//                     <button class="btn-carrito">
-//                         Añadir al carrito
-//                         <i class="fa-solid fa-cart-shopping"></i>
-//                         <i class="bi bi-cart"></i>
-//                     </button>
-//                 </div>
-//             </div>
-//         `;
-//     });
-
-//     contenedor.innerHTML = html;
-// }
-// mostrarComponentes(listaComponentes);
-
-
-
-
-
-
-// const listaComponentes = [
-//     { img: 'img/placa_asus.png', nombre: "PLACA INTEL ASUS PRIME H510M-R R2.0 DDR4 LGA 1200", precio: 500 },
-//     { img: 'img/procesador_i3.png', nombre: "PROCESADOR INTEL CORE I3 10105F 3.7GHZ 6MB LGA 1200", precio: 320 },
-//     { img: 'img/ssd_kingston.png', nombre: "SSD M.2 KINGSTON NV3 1TB NVME", precio: 500 },
-//     { img: 'img/ram_corsair.png', nombre: "MEMORIA DDR5 CORSAIR 16GB 5600MHZ VENGEANCE RGB", precio: 1000 },
-//     { img: 'img/fuente_antryx.png', nombre: "FUENTE 500W ANTRYX B500W ATX V3", precio: 120 },
-//     { img: 'img/teclado_razer.png', nombre: "TECLADO GAMING RAZER BLACKWIDOW V4 SWITCH GREEN RGB", precio: 675 }
-// ];
-
 const contenedor = document.getElementById('contenedor_componentes');
 const inputBusqueda = document.getElementById('buscar'); // 1. Capturamos el buscador
 
@@ -90,7 +48,7 @@ function mostrarComponentes(productos) {
                     <span class="tarjeta-precio">S/ ${prod.precio}</span>
                     <button class="btn-carrito">
                         Añadir al carrito
-                        <i class="fa-solid fa-cart-shopping"></i>
+                        <i class="bi bi-cart"></i>
                     </button>
                 </div>
             </div>
