@@ -1,0 +1,543 @@
+header{
+    background-color: rgb(0, 0, 0);
+
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: arial;
+  background: white;
+  color: black;
+  width: 100%;
+  margin: 0 auto;          
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+/*BARRA DE NAVEGACIÓN*/
+.navbar {
+  background: #010101;
+  color: white;
+  height: 60px;
+  width: 100%;
+  padding: 0 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 17px;
+}
+.menu-der i{
+  font-size: 20px;
+  color: white;
+}
+.usuario{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.menu-izq,
+.menu-der {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.menu-izq img{
+  height: 30px;
+}
+.busqueda input{
+  flex: 1;
+  height: 100%;
+  border-radius: 50px;
+  outline: none;
+  padding: 0 20px;
+  font-size: 20px;
+}
+
+.busqueda button {
+  height: 100%;
+  width: 40px;
+  border: none;
+  background: #ff8000;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
+/* promo o baner*/
+.promo {
+    background-image: url(img/fondo.jpg);
+    background-size: cover;
+    background-position: center;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 40px auto;
+    padding: 30px 80px; 
+    max-width: 1500px;
+    border-radius: 35px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+.promo_texto {
+    display: flex;
+    flex-direction: column;
+}
+.promo_titulo {
+    font-size: 35px;
+    margin: 0 0 4px 0;
+    padding-bottom: 4px;
+    display: inline-block;
+    width: fit-content;
+}
+.promo_subtitulo {
+    font-size: 31px;
+    font-weight: bold;
+    margin: 0 0 0 15px;
+}
+.promo_descuento {
+    display: flex;
+    align-items: baseline;
+    gap: 15px;
+    margin-left: 75px; 
+    margin-top: -10px;
+}
+.porcentaje {
+    font-size: 80px;
+    font-weight: 800;
+    color: #eaff05; 
+    line-height: 1;
+}
+.texto_desc {
+    font-size: 26px;
+    font-weight: bold;
+}
+.promo_img {
+    width: 100%;
+    max-width: 430px;
+    margin-right: 300px;
+}
+.promo_img img {
+    width: 100%;
+    height: 200px;
+    display: block;
+}
+/* buscador */
+.buscador{
+    font-size: 19px;
+    display: flex;
+    gap: 30px;
+    max-width: 1500px;
+    margin: 30px auto;
+    align-items: flex-start;
+}
+aside{
+    width: 250px;
+    max-width: 250px;
+    padding: 20px;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    border: 5px;
+    border-radius: 10px;
+    background-color: rgb(104, 104, 108);
+    color: #ffffff;
+}
+.bus_opcion {
+    display:flex;
+    flex-direction: column;
+    gap: 7px;
+}
+.bus_opcion label{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+    color: #ffffff;
+}
+.bus_opcion span{
+    color: #666666;
+    font-weight: bold;
+}
+/* deslizantes de precios */
+.bus_desl {
+    max-width: 100px;
+    padding: 5px;
+}
+.bus_desl input[type="range"] {
+    width: 150px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: #ddd; 
+    height: 3px;
+    border-radius: 5px;
+    outline: none;
+    user-select: none;
+}
+.bus_desl input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background:  rgb(83, 83, 85); 
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+.bus_desl input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+.precios {
+    display: flex;
+    justify-content: space-between;
+}
+/* cuadro de ofertas */
+.ofertas {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    color: #ddd;
+    font-size: 20px;
+}
+.ofer_1, .ofer_2{
+    background-image: url(img/fondo.jpg);
+    background-size: cover;
+    background-color: black;
+    flex: 1;
+    height: 180px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    padding: 20px;
+    border-radius: 25px;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.ofer_1 img, .ofer_2 img {
+    max-width: 75%;             
+    max-height: 170px;
+    object-fit: contain;
+}
+.badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: rgb(221, 232, 16);   
+    color: black;   
+    border-radius: 40px; 
+    padding: 7px 15px;  
+    font-size: 20px; 
+    font-weight: bold;
+}
+
+
+/* Targetas de ofertas*/
+.productos_grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 20px;
+    width: 100%;
+    margin-top: 25px;
+    box-sizing: border-box;
+}
+
+.producto_tarjeta {
+    background-color: #ffffff;
+    border: 2px solid #131212;
+    border-radius: 25px;
+    padding: 20px;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.producto_tarjeta img {
+    max-height: 130px;
+    max-width: 85%;
+    object-fit: contain;
+    margin-top: 15px;
+}
+
+.producto_nombre {
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: #000000;
+    width: 100%;
+    text-align: left;
+}
+
+.descuento_tag {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #222222;
+}
+
+.contenido_derecho {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    flex-grow: 1; 
+} 
+/* Ajusta la altura de la tarjeta para que quepa el texto de oferta */
+.producto_tarjeta {
+    background-color: #ffffff;
+    border: 2px solid #131212;
+    border-radius: 25px;
+    padding: 20px;
+    height: auto; 
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    box-sizing: border-box;
+    gap: 8px;
+}
+
+.producto_precios_contenedor {
+    width: 100%;
+    text-align: left;
+    font-family: Arial, sans-serif;
+    margin-top: 4px;
+}
+
+.precios_fila {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.precio_actual {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.precio_tachado {
+    font-size: 12px;
+    color: #888888;
+    text-decoration: line-through;
+}
+
+.texto_oferta {
+    font-size: 15px;
+    color: #a80101; 
+    margin-top: 5px;
+    font-weight: normal;
+}
+.descuento_tag {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: auto;
+    width: fit-content; 
+    background-color: #ff2a00;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 5px 12px;
+    border-radius: 20px;
+    z-index: 2;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/*sección FOOTER*/
+.pie {
+  background: #010101;
+  color: white;
+  margin-top: 60px;
+  padding: 60px 50px 20px 50px;
+  width: 100%;
+}
+.pie-columnas {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  max-width: 1440px;
+  margin: 0 auto 40px auto;
+}
+.pie h4 {
+  font-size: 20px;
+  margin-bottom: 22px;
+}
+.pie-c a {
+  display: block;
+  font-size: 17px;
+  color: #cfcfcf;
+  margin-bottom: 14px;
+  transition: color 0.2s ease;
+}
+.pie-c a:hover {
+  color: #ff0000;
+}
+.pie-contacto p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 17px;
+  color: #cfcfcf;
+  margin-bottom: 14px;
+}
+.redes {
+  display: flex;
+  gap: 18px;
+  font-size: 24px;
+  margin-top: 24px;
+}
+.redes a:hover {
+  color: #ff0000;
+}
+.pie-copyright {
+  border-top: 1px solid #444;
+  padding-top: 14px;
+  text-align: center;
+  font-size: 16px;
+  color: #bdbdbd;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid #ff8000;
+  outline-offset: 3px;
+}
+
+/* responsive */
+/* =========================================
+   DISEÑO RESPONSIVE (TABLETS Y CELULARES)
+   ========================================= */
+
+/* 1. Pantallas medianas y Tablets (hasta 1024px) */
+@media (max-width: 1024px) {
+    .promo {
+        margin: 20px;
+        padding: 30px 40px;
+    }
+
+    .promo_img {
+        margin-right: 0;
+        max-width: 240px;
+    }
+
+    .buscador {
+        padding: 0 20px;
+    }
+
+    /* Cambia de 4 columnas a 3 columnas */
+    .productos_grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}
+
+/* 2. Tablets verticales y celulares grandes (hasta 768px) */
+@media (max-width: 768px) {
+    /* Header y barra de navegación apilados */
+    header {
+        padding: 15px;
+    }
+
+    .navegacion {
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .left, .right {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    /* Banner promocional vertical */
+    .promo {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 20px;
+        gap: 20px;
+    }
+
+    .promo_titulo {
+        margin: 0 auto 10px auto;
+    }
+
+    .promo_subtitulo, .promo_descuento {
+        margin-left: 0;
+        justify-content: center;
+    }
+
+    .porcentaje {
+        font-size: 56px;
+    }
+    .promo_img{
+        width: 800px;;
+    }
+    /* Contenedor principal: el menú lateral pasa arriba */
+    .buscador {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    aside {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Cuadros de ofertas uno debajo del otro */
+    .ofertas {
+        flex-direction: column;
+    }
+
+    /* Cambia a 2 columnas en la grilla de productos */
+    .productos_grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/* 3. Celulares pequeños (hasta 480px) */
+@media (max-width: 480px) {
+    .buscar {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .caja {
+        width: 100%;
+        max-width: 220px;
+    }
+
+    .porcentaje {
+        font-size: 44px;
+    }
+
+    .texto_desc {
+        font-size: 20px;
+    }
+
+    /* 1 sola columna para que las tarjetas respiren bien xd*/
+    .productos_grid {
+        grid-template-columns: 1fr !important;
+    }
+}
