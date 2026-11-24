@@ -170,11 +170,11 @@ aside{
 }
 /* deslizantes de precios */
 .bus_desl {
-    max-width: 100px;
+    max-width: 100%;
     padding: 5px;
 }
 .bus_desl input[type="range"] {
-    width: 150px;
+    width: 200px;
     -webkit-appearance: none;
     appearance: none;
     background: #ddd; 
