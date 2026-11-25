@@ -11,30 +11,30 @@
 <body>
 
     <!-- ============ BARRA DE NAVEGACIÓN ============ -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="principal.html">
-                <img src="img/technova_logo_5.png" alt="TECHNOVA">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-principal" aria-controls="menu-principal" aria-expanded="false" aria-label="Mostrar menú">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="menu-principal">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link" href="Componentes.html">Componentes para PC</a></li>
-                    <li class="nav-item"><a class="nav-link" href="Descuentos.html">Novedades</a></li>
-                </ul>
-                <div class="input-group busqueda my-2 my-lg-0">
-                    <input type="text" class="form-control" id="buscar" placeholder="Buscar productos...">
-                    <button class="btn" type="button" id="btn-buscar" title="Buscar"><i class="bi bi-search"></i></button>
-                </div>
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link usuario" href="contacto.html">Inicia sesión / regístrate <i class="bi bi-person"></i></a></li>
-                    <li class="nav-item"><a class="nav-link carrito" href="carrito.html" title="Mi carrito"><i class="bi bi-cart"></i><span id="carrito-n" class="carrito-n" hidden>0</span></a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <header class="navbar">
+      <div class="menu-izq">
+        <a href="index.html">
+          <img src="img/technova_logo_5.png" alt="TECHNOVA" />
+        </a>
+        <a href="Componentes.html">Componentes para PC</a>
+        <a href="Descuentos.html">Novedades</a>
+      </div>
+      <div class="busqueda">
+        <input type="text" id="buscar" placeholder="Buscar productos..." />
+        <button type="button" id="btn-buscar" title="Buscar">
+          <i class="bi bi-search"></i>
+        </button>
+      </div>
+      <div class="menu-der">
+        <a href="#" class="usuario"
+          >Inicia sesión / regístrate <i class="bi bi-person"></i
+        ></a>
+        <a href="#" title="Mi carrito" class="carrito"
+          ><i class="bi bi-cart"></i
+          ><span id="carrito-n" class="carrito-n" hidden>0</span></a
+        >
+      </div>
+    </header>
 
     <!-- ============ BANNER PRINCIPAL ============ -->
     <section id="banner-principal" class="carousel slide banner" data-bs-ride="carousel" data-bs-interval="2500">
