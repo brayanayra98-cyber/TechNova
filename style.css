@@ -31,50 +31,53 @@ h1, h2, h3, h4, h5, h6 {
 /*BARRA DE NAVEGACIÓN*/
 .navbar {
   background: #010101;
-  min-height: 60px;
-  padding: 8px 50px;
+  color: white;
+  height: 60px;
+  width: 100%;
+  padding: 0 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-size: 17px;
 }
-.navbar-brand img {
+.menu-der i{
+  font-size: 20px;
+  color: white;
+}
+.usuario{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.menu-izq,
+.menu-der {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.menu-izq img{
   height: 30px;
 }
-.navbar .nav-link {
-  color: white;
-}
-.navbar .nav-link:hover {
-  color: #ff8000;
-}
-.usuario i,
-.carrito i {
+.busqueda input{
+  flex: 1;
+  height: 100%;
+  border-radius: 50px;
+  outline: none;
+  padding: 0 20px;
   font-size: 20px;
 }
-.usuario i {
-  margin-left: 6px;
-}
-.busqueda {
-  max-width: 420px;
-}
-.busqueda .form-control {
-  border-radius: 50px 0 0 50px;
-  padding: 0 20px;
-  font-size: 18px;
-}
-.busqueda .btn {
-  width: 44px;
+
+.busqueda button {
+  height: 100%;
+  width: 40px;
+  border: none;
   background: #ff8000;
   color: white;
-  border-radius: 0 12px 12px 0;
-}
-.busqueda .btn:hover {
-  background: #e67300;
-}
-@media (max-width: 991px) {
-  .navbar {
-    padding: 8px 16px;
-  }
-  .busqueda {
-    max-width: 100%;
-  }
+  font-size: 20px;
+  cursor: pointer;
 }
 
 
@@ -392,6 +395,13 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 60px;
   padding: 60px 50px 20px 50px;
   width: 100%;
+}
+.pie-columnas {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  max-width: 1440px;
+  margin: 0 auto 40px auto;
 }
 .pie h4 {
   font-size: 20px;
