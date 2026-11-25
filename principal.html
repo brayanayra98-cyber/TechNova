@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechNova - Página principal</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
@@ -12,67 +11,51 @@
 
     <!-- ============ BARRA DE NAVEGACIÓN ============ -->
     <header class="navbar">
-      <div class="menu-izq">
-        <a href="index.html">
-          <img src="img/technova_logo_5.png" alt="TECHNOVA" />
-        </a>
-        <a href="Componentes.html">Componentes para PC</a>
-        <a href="Descuentos.html">Novedades</a>
-      </div>
-      <div class="busqueda">
-        <input type="text" id="buscar" placeholder="Buscar productos..." />
-        <button type="button" id="btn-buscar" title="Buscar">
-          <i class="bi bi-search"></i>
-        </button>
-      </div>
-      <div class="menu-der">
-        <a href="#" class="usuario"
-          >Inicia sesión / regístrate <i class="bi bi-person"></i
-        ></a>
-        <a href="#" title="Mi carrito" class="carrito"
-          ><i class="bi bi-cart"></i
-          ><span id="carrito-n" class="carrito-n" hidden>0</span></a
-        >
-      </div>
+        <div class="menu-izq">
+            <a href="principal.html">
+                <img src="img/technova_logo_5.png" alt="TECHNOVA">
+            </a>
+            <a href="Componentes.html">Componentes para PC</a>
+            <a href="Descuentos.html">Novedades</a>
+            <a href="contacto.html">Contacto</a>
+        </div>
+        <div class="busqueda">
+            <input type="text" id="buscar" placeholder="Buscar productos...">
+            <button type="button" id="btn-buscar" title="Buscar">
+                <i class="bi bi-search"></i>
+            </button>
+        </div>
+        <div class="menu-der">
+            <a href="#" class="usuario">Inicia sesión / regístrate <i class="bi bi-person"></i></a>
+            <a href="carrito.html" title="Mi carrito" class="carrito"><i class="bi bi-cart"></i><span id="carrito-n" class="carrito-n" hidden>0</span></a>
+        </div>
     </header>
 
     <!-- ============ BANNER PRINCIPAL ============ -->
-    <section id="banner-principal" class="carousel slide banner" data-bs-ride="carousel" data-bs-interval="2500">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#banner-principal" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Banner 1"></button>
-            <button type="button" data-bs-target="#banner-principal" data-bs-slide-to="1" aria-label="Banner 2"></button>
-            <button type="button" data-bs-target="#banner-principal" data-bs-slide-to="2" aria-label="Banner 3"></button>
-            <button type="button" data-bs-target="#banner-principal" data-bs-slide-to="3" aria-label="Banner 4"></button>
-        </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <a href="Componentes.html"><img src="img/bannerimg.png" class="d-block w-100" alt="Descuentos en componentes"></a>
+    <section class="banner">
+        <div class="fila-img">
+            <a href="Componentes.html" class="slide">
+                <img src="img/bannerimg.png" alt="Descuentos en componentes">
+            </a>    
+            <div class="slide">
+                <img src="img/banner2.png" alt="Redragon banner">
             </div>
-            <div class="carousel-item">
-                <img src="img/banner2.png" class="d-block w-100" alt="Redragon banner">
+            <div class="slide">
+                <img src="img/banner3.png" alt="Compras seguras">
             </div>
-            <div class="carousel-item">
-                <img src="img/banner3.png" class="d-block w-100" alt="Compras seguras">
-            </div>
-            <div class="carousel-item">
-                <img src="img/banner4.png" class="d-block w-100" alt="Tarjetas Nvidia">
+            <div class="slide">
+                <img src="img/banner4.png" alt="Tarjetas Nvidia">
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#banner-principal" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Anterior</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#banner-principal" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Siguiente</span>
-        </button>
+        <button class="flecha-img izq" title="Imagen anterior"><i class="bi bi-chevron-left"></i></button>
+        <button class="flecha-img der" title="Imagen siguiente"><i class="bi bi-chevron-right"></i></button>
+        <div class="puntos-img"></div>
     </section>
 
     <main class="contenido">
 
         <!-- ============ MARCAS ============ -->
         <section class="marcas">
-            <h2 class="pildora">MARCAS</h2>
             <div class="marca"><img src="img/razer.png" alt="Razer"><p>Razer</p></div>
             <div class="marca"><img src="img/redragon.png" alt="Redragon"><p>Redragon</p></div>
             <div class="marca"><img src="img/logitech.png" alt="Logitech"><p>Logitech</p></div>
@@ -85,7 +68,7 @@
 
         <!-- ============ CATEGORÍAS ============ -->
         <section class="categorias">
-            <h2 class="pildora">EXPLORA LAS CATEGORÍAS</h2>
+            <h2>EXPLORA LAS CATEGORÍAS</h2>
             <div class="tarjetas">
                 <a href="Componentes.html" class="tarjeta">
                     <img src="img/componentes.png" alt="Componentes">
@@ -180,7 +163,7 @@
                     </label>
                 </div>
                 <div class="armador-resumen">
-                    <h3>Lista de productos</h3>
+                    <h3>Tu configuración</h3>
                     <ul id="pc-lista" class="armador-lista"></ul>
                     <p class="armador-total">Total: <strong id="pc-total">S/ 0.00</strong></p>
                     <p id="pc-estado" class="armador-estado espera" aria-live="polite"></p>
@@ -193,7 +176,7 @@
         </section>
 
         <!-- ============ LOS MEJORES DESCUENTOS ============ -->
-<section class="descuentos">
+        <section class="descuentos">
             <h2 class="pildora">LOS MEJORES DESCUENTOS</h2>
             <div class="carrusel">
                 <button class="flecha" aria-label="Ver anteriores"><i class="bi bi-arrow-left"></i></button>
@@ -279,6 +262,42 @@
                             <p class="producto-meta"><span>Marca</span><span>014107</span></p>
                             <p class="producto-nombre">Producto en descuento 7</p>
                             <div class="producto-precio"><strong>S/ 737.18</strong><s>S/ 899.00</s></div>
+                            <p class="precio-oferta">¡Oferta Online!</p>
+                        </div>
+                    </a>
+                    <a href="#" class="producto_vendido">
+                        <div class="producto">
+                        <span class="descuento-etiqueta">-20%</span>
+                            <img src="img/DESCUENTOS/descuento8.png" alt="Producto en descuento 8">
+                        </div>
+                        <div class="producto-datos">
+                            <p class="producto-meta"><span>Marca</span><span>014108</span></p>
+                            <p class="producto-nombre">Producto en descuento 8</p>
+                            <div class="producto-precio"><strong>S/ 959.20</strong><s>S/ 1,199.00</s></div>
+                            <p class="precio-oferta">¡Oferta Online!</p>
+                        </div>
+                    </a>
+                    <a href="#" class="producto_vendido">
+                        <div class="producto">
+                        <span class="descuento-etiqueta">-30%</span>
+                            <img src="img/DESCUENTOS/descuento9.png" alt="Producto en descuento 9">
+                        </div>
+                        <div class="producto-datos">
+                            <p class="producto-meta"><span>Marca</span><span>014109</span></p>
+                            <p class="producto-nombre">Producto en descuento 9</p>
+                            <div class="producto-precio"><strong>S/ 244.30</strong><s>S/ 349.00</s></div>
+                            <p class="precio-oferta">¡Oferta Online!</p>
+                        </div>
+                    </a>
+                    <a href="#" class="producto_vendido">
+                        <div class="producto">
+                        <span class="descuento-etiqueta">-12%</span>
+                            <img src="img/DESCUENTOS/descuento10.png" alt="Producto en descuento 10">
+                        </div>
+                        <div class="producto-datos">
+                            <p class="producto-meta"><span>Marca</span><span>014110</span></p>
+                            <p class="producto-nombre">Producto en descuento 10</p>
+                            <div class="producto-precio"><strong>S/ 1,935.12</strong><s>S/ 2,199.00</s></div>
                             <p class="precio-oferta">¡Oferta Online!</p>
                         </div>
                     </a>
@@ -370,53 +389,87 @@
                             <p class="precio-regular">Regular: S/ 1,208.90</p>
                         </div>
                     </a>
+                    <a href="#" class="producto_vendido">
+                        <div class="producto">
+                            <img src="img/vendido8.png" alt="Producto más vendido 8">
+                        </div>
+                        <div class="producto-datos">
+                            <p class="producto-meta"><span>Marca</span><span>013408</span></p>
+                            <p class="producto-nombre">Producto más vendido 8</p>
+                            <div class="producto-precio"><span class="precio-etiqueta">PRECIO ONLINE</span><strong>S/ 179.90</strong></div>
+                            <p class="precio-regular">Regular: S/ 197.89</p>
+                        </div>
+                    </a>
+                    <a href="#" class="producto_vendido">
+                        <div class="producto">
+                            <img src="img/vendido9.png" alt="Producto más vendido 9">
+                        </div>
+                        <div class="producto-datos">
+                            <p class="producto-meta"><span>Marca</span><span>013409</span></p>
+                            <p class="producto-nombre">Producto más vendido 9</p>
+                            <div class="producto-precio"><span class="precio-etiqueta">PRECIO ONLINE</span><strong>S/ 529.00</strong></div>
+                            <p class="precio-regular">Regular: S/ 581.90</p>
+                        </div>
+                    </a>
+                    <a href="#" class="producto_vendido">
+                        <div class="producto">
+                            <img src="img/vendido10.png" alt="Producto más vendido 10">
+                        </div>
+                        <div class="producto-datos">
+                            <p class="producto-meta"><span>Marca</span><span>013410</span></p>
+                            <p class="producto-nombre">Producto más vendido 10</p>
+                            <div class="producto-precio"><span class="precio-etiqueta">PRECIO ONLINE</span><strong>S/ 2,399.00</strong></div>
+                            <p class="precio-regular">Regular: S/ 2,638.90</p>
+                        </div>
+                    </a>
                 </div>
                 <button class="flecha" aria-label="Ver siguientes"><i class="bi bi-arrow-right"></i></button>
             </div>
         </section>
-        <!-- ============ TECHNOVA ESTADÍSTICAS ============ -->
+
+        <!-- ============ TECHNOVA EN NÚMEROS ============ -->
         <section class="contadores" aria-label="TechNova en números">
             <div class="contadores-fila">
-                <div class="contador"><strong>+12,000</strong><span>clientes satisfechos</span></div>
-                <div class="contador"><strong>+850</strong><span>productos en catálogo</span></div>
-                <div class="contador"><strong>8</strong><span>marcas aliadas</span></div>
-                <div class="contador"><strong>98%</strong><span>de satisfacción</span></div>
+                <div class="contador"><strong data-meta="12000" data-prefijo="+" data-sufijo="">+12,000</strong><span>clientes satisfechos</span></div>
+                <div class="contador"><strong data-meta="850" data-prefijo="+" data-sufijo="">+850</strong><span>productos en catálogo</span></div>
+                <div class="contador"><strong data-meta="8" data-prefijo="" data-sufijo="">8</strong><span>marcas aliadas</span></div>
+                <div class="contador"><strong data-meta="98" data-prefijo="" data-sufijo="%">98%</strong><span>de satisfacción</span></div>
             </div>
         </section>
 
         <!-- ============ RESEÑAS ============ -->
-        <section class="reseñas">
+        <section class="resenas">
             <h2 class="pildora">LO QUE DICEN NUESTROS CLIENTES</h2>
-            <div class="carrusel">
+            <div class="carrusel" data-auto>
                 <button class="flecha" aria-label="Ver anteriores"><i class="bi bi-arrow-left"></i></button>
                 <div class="productos">
-                    <article class="reseña">
-                        <div class="reseña-estrellas"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                    <article class="resena">
+                        <div class="resena-estrellas"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
                         <p>«Armé mi PC gamer con ellos y llegó todo en 48 horas, bien embalado. Rinde de maravilla.»</p>
                         <footer><strong>Carlos M.</strong><small>Lima</small></footer>
                     </article>
-                    <article class="reseña">
-                        <div class="reseña-estrellas"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                    <article class="resena">
+                        <div class="resena-estrellas"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
                         <p>«Me ayudaron a elegir la fuente correcta para mi RTX. Atención rápida y precios claros.»</p>
                         <footer><strong>Andrea R.</strong><small>Arequipa</small></footer>
                     </article>
-                    <article class="reseña">
-                        <div class="reseña-estrellas"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                    <article class="resena">
+                        <div class="resena-estrellas"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
                         <p>«Compré el combo de teclado y mouse. La calidad es muy buena para el precio.»</p>
                         <footer><strong>Luis P.</strong><small>Trujillo</small></footer>
                     </article>
-                    <article class="reseña">
-                        <div class="reseña-estrellas"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                    <article class="resena">
+                        <div class="resena-estrellas"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
                         <p>«Tuve una consulta de garantía y la resolvieron el mismo día. Muy recomendados.»</p>
                         <footer><strong>Valeria S.</strong><small>Cusco</small></footer>
                     </article>
-                    <article class="reseña">
-                        <div class="reseña-estrellas"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                    <article class="resena">
+                        <div class="resena-estrellas"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
                         <p>«Los descuentos son reales. Ahorré bastante en memoria RAM y SSD.»</p>
                         <footer><strong>Jorge T.</strong><small>Piura</small></footer>
                     </article>
-                    <article class="reseña">
-                        <div class="reseña-estrellas"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                    <article class="resena">
+                        <div class="resena-estrellas"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
                         <p>«El armador de PC de la web me ahorró horas de dudas sobre compatibilidad.»</p>
                         <footer><strong>Camila V.</strong><small>Lima</small></footer>
                     </article>
@@ -429,46 +482,26 @@
         <section class="faq">
             <h2 class="pildora">PREGUNTAS FRECUENTES</h2>
             <div class="faq-grid">
-                <div class="accordion accordion-flush" id="faq-acordeon">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="faq-titulo-1">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-respuesta-1" aria-expanded="false" aria-controls="faq-respuesta-1">¿Cuánto demora el envío?</button>
-                        </h2>
-                        <div id="faq-respuesta-1" class="accordion-collapse collapse" aria-labelledby="faq-titulo-1" data-bs-parent="#faq-acordeon">
-                            <div class="accordion-body">En Lima Metropolitana entregamos en 24 a 48 horas. A provincias, entre 3 y 5 días hábiles.</div>
-                        </div>
+                <div class="faq-lista">
+                    <div class="faq-item">
+                        <button type="button" class="faq-p" aria-expanded="false">¿Cuánto demora el envío?<i class="bi bi-plus-lg"></i></button>
+                        <div class="faq-r"><p>En Lima Metropolitana entregamos en 24 a 48 horas. A provincias, entre 3 y 5 días hábiles.</p></div>
                     </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="faq-titulo-2">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-respuesta-2" aria-expanded="false" aria-controls="faq-respuesta-2">¿Qué formas de pago aceptan?</button>
-                        </h2>
-                        <div id="faq-respuesta-2" class="accordion-collapse collapse" aria-labelledby="faq-titulo-2" data-bs-parent="#faq-acordeon">
-                            <div class="accordion-body">Tarjetas de crédito y débito, Yape, Plin y transferencia bancaria.</div>
-                        </div>
+                    <div class="faq-item">
+                        <button type="button" class="faq-p" aria-expanded="false">¿Qué formas de pago aceptan?<i class="bi bi-plus-lg"></i></button>
+                        <div class="faq-r"><p>Tarjetas de crédito y débito, Yape, Plin y transferencia bancaria.</p></div>
                     </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="faq-titulo-3">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-respuesta-3" aria-expanded="false" aria-controls="faq-respuesta-3">¿Los productos tienen garantía?</button>
-                        </h2>
-                        <div id="faq-respuesta-3" class="accordion-collapse collapse" aria-labelledby="faq-titulo-3" data-bs-parent="#faq-acordeon">
-                            <div class="accordion-body">Sí. Todos incluyen garantía del fabricante o de la tienda. El tiempo depende del producto y se indica en su ficha.</div>
-                        </div>
+                    <div class="faq-item">
+                        <button type="button" class="faq-p" aria-expanded="false">¿Los productos tienen garantía?<i class="bi bi-plus-lg"></i></button>
+                        <div class="faq-r"><p>Sí. Todos incluyen garantía del fabricante o de la tienda. El tiempo depende del producto y se indica en su ficha.</p></div>
                     </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="faq-titulo-4">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-respuesta-4" aria-expanded="false" aria-controls="faq-respuesta-4">¿Puedo devolver un producto?</button>
-                        </h2>
-                        <div id="faq-respuesta-4" class="accordion-collapse collapse" aria-labelledby="faq-titulo-4" data-bs-parent="#faq-acordeon">
-                            <div class="accordion-body">Puedes solicitar una devolución dentro de los 7 días siguientes a la entrega, con el producto sin uso y en su empaque original.</div>
-                        </div>
+                    <div class="faq-item">
+                        <button type="button" class="faq-p" aria-expanded="false">¿Puedo devolver un producto?<i class="bi bi-plus-lg"></i></button>
+                        <div class="faq-r"><p>Puedes solicitar una devolución dentro de los 7 días siguientes a la entrega, con el producto sin uso y en su empaque original.</p></div>
                     </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="faq-titulo-5">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-respuesta-5" aria-expanded="false" aria-controls="faq-respuesta-5">¿Me ayudan a elegir las piezas de mi PC?</button>
-                        </h2>
-                        <div id="faq-respuesta-5" class="accordion-collapse collapse" aria-labelledby="faq-titulo-5" data-bs-parent="#faq-acordeon">
-                            <div class="accordion-body">Claro. Usa el armador de esta página o escríbenos a technova_pe@gmail.com y te asesoramos.</div>
-                        </div>
+                    <div class="faq-item">
+                        <button type="button" class="faq-p" aria-expanded="false">¿Me ayudan a elegir las piezas de mi PC?<i class="bi bi-plus-lg"></i></button>
+                        <div class="faq-r"><p>Claro. Usa el armador de esta página o escríbenos a technova_pe@gmail.com y te asesoramos.</p></div>
                     </div>
                 </div>
                 <form class="suscripcion" id="form-suscripcion" novalidate>
@@ -480,47 +513,47 @@
                 </form>
             </div>
         </section>
+
     </main>
 
     <!-- ============ PIE DE PÁGINA ============ -->
     <footer class="pie">
-      <div class="pie-columnas">
-        <div class="pie-c">
-          <h4>INICIO</h4>
-          <a href="Componentes.html">Componentes</a>
-          <a href="#">Accesorios</a>
-          <a href="Descuentos.html">Descuentos</a>
+        <div class="pie-columnas">
+            <div class="pie-c">
+                <h4>INICIO</h4>
+                <a href="#">Componentes</a>
+                <a href="#">Accesorios</a>
+                <a href="#">Descuentos</a>
+            </div>
+            <div class="pie-c">
+                <h4>SOPORTE</h4>
+                <a href="contacto.html">Contáctanos</a>
+                <a href="#">Devoluciones</a>
+                <a href="#">Opciones de pago</a>
+                <a href="#">Estado del pedido</a>
+            </div>
+            <div class="pie-c">
+                <h4>EMPRESA</h4>
+                <a href="#">Sobre nosotros</a>
+                <a href="#">Comentarios</a>
+                <a href="#">Blog</a>
+            </div>
+            <div class="pie-contacto">
+                <h4>CONTACTO</h4>
+                <p><i class="bi bi-telephone"></i> +51 912 234 789</p>
+                <p><i class="bi bi-envelope"></i> technova_pe@gmail.com</p>
+                <div class="redes">
+                    <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+                </div>
+            </div>
         </div>
-        <div class="pie-c">
-          <h4>SOPORTE</h4>
-          <a href="contacto.html">Contáctanos</a>
-          <a href="#">Devoluciones</a>
-          <a href="#">Opciones de pago</a>
-          <a href="#">Estado del pedido</a>
-        </div>
-        <div class="pie-c">
-          <h4>EMPRESA</h4>
-          <a href="#">Sobre nosotros</a>
-          <a href="#">Comentarios</a>
-          <a href="#">Blog</a>
-        </div>
-        <div class="pie-contacto">
-          <h4>CONTACTO</h4>
-          <p><i class="bi bi-telephone"></i> +51 912 234 789</p>
-          <p><i class="bi bi-envelope"></i> technova_pe@gmail.com</p>
-          <div class="redes">
-            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a>
-            <a href="#" aria-label="Instagram"
-              ><i class="bi bi-instagram"></i
-            ></a>
-            <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
-            <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
-          </div>
-        </div>
-      </div>
+        <p class="pie-copyright">TechNova - Derechos Reservados 2026</p>
+    </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
 </html>
