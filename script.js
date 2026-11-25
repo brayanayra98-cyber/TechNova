@@ -1,191 +1,261 @@
-// ---------- 1. BUSCADOR ----------
-const cajaBuscar = document.getElementById("buscar");
+/// ---------- BANNER PRINCIPAL ----------
+const filaImg = document.querySelector(".fila-img");
+const slides = document.querySelectorAll(".fila-img .slide");
+const anterior = document.querySelector(".flecha-img.izq");
+const siguiente = document.querySelector(".flecha-img.der");
+
+let indice = 0;
+
+function mostrarBanner() {
+    filaImg.style.transform = `translateX(-${indice * 100}%)`;
+}
+
+siguiente.addEventListener("click", function () {
+    indice++;
+
+    if (indice >= slides.length) {
+        indice = 0;
+    }
+
+    mostrarBanner();
+});
+
+anterior.addEventListener("click", function () {
+    indice--;
+
+    if (indice < 0) {
+        indice = slides.length - 1;
+    }
+
+    mostrarBanner();
+});
+// ---------- BÚSQUEDA ----------
+const inputBuscar = document.getElementById("buscar");
 const botonBuscar = document.getElementById("btn-buscar");
-const todosLosProductos = document.querySelectorAll(".producto_vendido");
 
 function buscarProductos() {
-  const texto = cajaBuscar.value.toLowerCase();
-
-  for (let i = 0; i < todosLosProductos.length; i++) {
-    const nombre = todosLosProductos[i].querySelector(".producto-nombre").textContent.toLowerCase();
-
-    if (nombre.includes(texto)) {
-      todosLosProductos[i].hidden = false;  
-    } else {
-      todosLosProductos[i].hidden = true;  
-    }
-  }
+  const texto = inputBuscar.value.trim();
+  if (texto === "") return;
+  console.log("Buscando: " + texto);
 }
 
-botonBuscar.addEventListener("click", buscarProductos);  
-cajaBuscar.addEventListener("keyup", buscarProductos);   
+botonBuscar.addEventListener("click", buscarProductos);
+inputBuscar.addEventListener("keydown", function (e) {
+  if (e.key === "Enter") buscarProductos();
+});
 
 
-// ---------- 2. FLECHAS DE LOS CARRUSELES ----------
-const carruseles = document.querySelectorAll(".carrusel");
+// ---------- CARRUSELES DE PRODUCTOS ----------
+document.querySelectorAll(".carrusel").forEach(function (carrusel) {
+  const [flechaIzq, flechaDer] = carrusel.querySelectorAll(".flecha");
+  const productos = carrusel.querySelector(".productos");
 
-for (let i = 0; i < carruseles.length; i++) {
-  const flechas = carruseles[i].querySelectorAll(".flecha");
-  const flechaIzquierda = flechas[0];
-  const flechaDerecha = flechas[1];
-  const fila = carruseles[i].querySelector(".productos");
+  // Distancia de un salto = ancho de una tarjeta + el espacio entre tarjetas
+  function tamanoSalto() {
+    const tarjeta = productos.firstElementChild;
+    const gap = parseFloat(getComputedStyle(productos).columnGap) || 0;
+    return tarjeta.offsetWidth + gap;
+  }
 
-  const salto = 250;  
+  // Activa o desactiva las flechas según la posición actual
+  function actualizarFlechas() {
+    const maxScroll = productos.scrollWidth - productos.clientWidth;
+    flechaIzq.disabled = productos.scrollLeft <= 1;
+    flechaDer.disabled = productos.scrollLeft >= maxScroll - 1;
+  }
 
-  flechaIzquierda.addEventListener("click", function () {
-    fila.scrollLeft = fila.scrollLeft - salto;
+  flechaIzq.addEventListener("click", function () {
+    productos.scrollBy({ left: -tamanoSalto(), behavior: "smooth" });
+  });
+  flechaDer.addEventListener("click", function () {
+    productos.scrollBy({ left: tamanoSalto(), behavior: "smooth" });
   });
 
-  flechaDerecha.addEventListener("click", function () {
-    fila.scrollLeft = fila.scrollLeft + salto;
-  });
-}
+  productos.addEventListener("scroll", actualizarFlechas);
+  window.addEventListener("resize", actualizarFlechas);
+  actualizarFlechas();
 
-
-// ---------- 3. ARMA TU PC ----------
-const listas = document.querySelectorAll(".armador select");
-const resumen = document.getElementById("pc-lista");
-const textoTotal = document.getElementById("pc-total");
-const textoEstado = document.getElementById("pc-estado");
-const botonAnadir = document.getElementById("pc-anadir");
-const botonReiniciar = document.getElementById("pc-reiniciar");
-const numeroCarrito = document.getElementById("carrito-n");
-
-let enCarrito = 0;   
-function dinero(numero) {
-  return "S/ " + numero.toLocaleString("es-PE", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-}
-
-function datosDe(id) {
-  const lista = document.getElementById(id);
-
-  if (lista.selectedIndex === 0) {  
-    return null;
+  if (carrusel.hasAttribute("data-auto") &&
+      !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    let pausado = false;
+    carrusel.addEventListener("mouseenter", function () { pausado = true; });
+    carrusel.addEventListener("mouseleave", function () { pausado = false; });
+    setInterval(function () {
+      if (pausado) return;
+      if (flechaDer.disabled) productos.scrollTo({ left: 0, behavior: "smooth" });
+      else flechaDer.click();
+    }, 4000);
   }
-  const opcion = lista.options[lista.selectedIndex];
-  return {
-    nombre: opcion.textContent,
-    precio: Number(opcion.getAttribute("data-precio")),
-    socket: opcion.getAttribute("data-socket"),
-    ddr: opcion.getAttribute("data-ddr"),
-    watts: Number(opcion.getAttribute("data-watts"))
+});
+
+
+// ---------- ARMA TU PC ----------
+(function () {
+  const selects = Array.from(document.querySelectorAll(".armador select"));
+  if (selects.length === 0) return;
+
+  const lista = document.getElementById("pc-lista");
+  const totalEl = document.getElementById("pc-total");
+  const estadoEl = document.getElementById("pc-estado");
+  const btnAnadir = document.getElementById("pc-anadir");
+  const btnReiniciar = document.getElementById("pc-reiniciar");
+  const badge = document.getElementById("carrito-n");
+  let enCarrito = 0;
+
+  const dinero = function (n) {
+    return "S/ " + n.toLocaleString("es-PE", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
   };
-}
 
-function mostrarEstado(clase, texto) {
-  textoEstado.className = "armador-estado " + clase;
-  textoEstado.textContent = texto;
-}
+  function dato(id) {
+    const opcion = document.getElementById(id).selectedOptions[0];
+    if (!opcion || !opcion.dataset.precio) return null;   // la opción "Elige una opción" no tiene precio
+    return {
+      nombre: opcion.textContent.trim(),
+      precio: Number(opcion.dataset.precio),
+      socket: opcion.dataset.socket,
+      ddr: opcion.dataset.ddr,
+      watts: Number(opcion.dataset.watts || 0)
+    };
+  }
 
-function actualizar() {
+  function mostrarEstado(clase, texto) {
+    estadoEl.className = "armador-estado " + clase;
+    estadoEl.textContent = texto;
+  }
 
-  resumen.innerHTML = "";
-  let total = 0;
-  let elegidas = 0;
+  function actualizar() {
+    // Lista de piezas y total
+    lista.innerHTML = "";
+    let total = 0, elegidas = 0;
+    selects.forEach(function (s) {
+      const d = dato(s.id);
+      const li = document.createElement("li");
+      if (d) {
+        total += d.precio;
+        elegidas++;
+        li.innerHTML = "<span></span><span></span>";
+        li.children[0].textContent = d.nombre;
+        li.children[1].textContent = dinero(d.precio);
+      } else {
+        li.className = "vacio";
+        li.textContent = s.dataset.pieza + ": sin elegir";
+      }
+      lista.appendChild(li);
+    });
+    totalEl.textContent = dinero(total);
 
-  for (let i = 0; i < listas.length; i++) {
-    const pieza = datosDe(listas[i].id);
-    const fila = document.createElement("li");
-
-    if (pieza === null) {
-      fila.className = "vacio";
-      fila.textContent = listas[i].getAttribute("data-pieza") + ": sin elegir";
-    } else {
-      total = total + pieza.precio;
-      elegidas = elegidas + 1;
-      fila.innerHTML = "<span>" + pieza.nombre + "</span><span>" + dinero(pieza.precio) + "</span>";
+    // Compatibilidad
+    const cpu = dato("pc-cpu"), placa = dato("pc-placa"), ram = dato("pc-ram");
+    const gpu = dato("pc-gpu"), fuente = dato("pc-fuente");
+    const errores = [];
+    if (cpu && placa && cpu.socket !== placa.socket) {
+      errores.push("El procesador (" + cpu.socket + ") no es compatible con la placa madre (" + placa.socket + ").");
+    }
+    if (placa && ram && placa.ddr !== ram.ddr) {
+      errores.push("La placa madre usa " + placa.ddr + " y la memoria es " + ram.ddr + ".");
+    }
+    if (fuente && (cpu || gpu)) {
+      const minimo = Math.ceil(((cpu ? cpu.watts : 0) + (gpu ? gpu.watts : 0) + 100) / 50) * 50;
+      if (fuente.watts < minimo) {
+        errores.push("La fuente de " + fuente.watts + "W es corta. Para estas piezas recomendamos al menos " + minimo + "W.");
+      }
     }
 
-    resumen.appendChild(fila);
+    const faltan = selects.length - elegidas;
+    if (errores.length > 0) mostrarEstado("error", errores.join(" "));
+    else if (faltan > 0) mostrarEstado("espera", "Elige " + faltan + (faltan === 1 ? " pieza más." : " piezas más."));
+    else mostrarEstado("ok", "Todo es compatible. Tu PC está lista.");
+
+    btnAnadir.disabled = errores.length > 0 || faltan > 0;
   }
 
-  textoTotal.textContent = dinero(total);
-  const cpu = datosDe("pc-cpu");
-  const placa = datosDe("pc-placa");
-  const ram = datosDe("pc-ram");
-  const gpu = datosDe("pc-gpu");
-  const fuente = datosDe("pc-fuente");
+  selects.forEach(function (s) { s.addEventListener("change", actualizar); });
 
-  let errores = "";   
-  if (cpu !== null && placa !== null && cpu.socket !== placa.socket) {
-    errores = errores + "El procesador (" + cpu.socket + ") no es compatible con la placa madre (" + placa.socket + "). ";
-  }
+  btnReiniciar.addEventListener("click", function () {
+    selects.forEach(function (s) { s.selectedIndex = 0; });
+    actualizar();
+  });
 
-  if (placa !== null && ram !== null && placa.ddr !== ram.ddr) {
-    errores = errores + "La placa madre usa " + placa.ddr + " y la memoria es " + ram.ddr + ". ";
-  }
+  btnAnadir.addEventListener("click", function () {
+    enCarrito++;
+    badge.textContent = enCarrito;
+    badge.hidden = false;
+    mostrarEstado("ok", "¡Configuración añadida al carrito!");
+    setTimeout(actualizar, 2500);
+  });
 
-  if (fuente !== null && (cpu !== null || gpu !== null)) {
-    let consumo = 100; 
-    if (cpu !== null) {
-      consumo = consumo + cpu.watts;
-    }
-    if (gpu !== null) {
-      consumo = consumo + gpu.watts;
-    }
-    const minimo = Math.ceil(consumo / 50) * 50; 
-
-    if (fuente.watts < minimo) {
-      errores = errores + "La fuente de " + fuente.watts + "W es corta. Para estas piezas recomendamos al menos " + minimo + "W. ";
-    }
-  }
-
-  const faltan = listas.length - elegidas;
-
-  if (errores !== "") {
-    mostrarEstado("error", errores);
-  } else if (faltan === 1) {
-    mostrarEstado("espera", "Elige 1 pieza más.");
-  } else if (faltan > 1) {
-    mostrarEstado("espera", "Elige " + faltan + " piezas más.");
-  } else {
-    mostrarEstado("ok", "Todo es compatible. Tu PC está lista.");
-  }
-
-  botonAnadir.disabled = (errores !== "" || faltan > 0);
-}
-
-for (let i = 0; i < listas.length; i++) {
-  listas[i].addEventListener("change", actualizar);
-}
-
-botonReiniciar.addEventListener("click", function () {
-  for (let i = 0; i < listas.length; i++) {
-    listas[i].selectedIndex = 0;
-  }
   actualizar();
-});
-
-botonAnadir.addEventListener("click", function () {
-  enCarrito = enCarrito + 1;
-  numeroCarrito.textContent = enCarrito;
-  numeroCarrito.hidden = false;
-  mostrarEstado("ok", "¡Configuración añadida al carrito!");
-  setTimeout(actualizar, 2500);   
-});
-actualizar(); 
+})();
 
 
-// ---------- 4. SUSCRIPCIÓN ----------
-const formulario = document.getElementById("form-suscripcion");
-const campoCorreo = document.getElementById("suscripcion-correo");
-const mensajeSuscripcion = document.getElementById("suscripcion-msj");
+// ---------- CONTADORES ANIMADOS ----------
+(function () {
+  const numeros = document.querySelectorAll("[data-meta]");
+  if (numeros.length === 0) return;
+  const reducir = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-formulario.addEventListener("submit", function (evento) {
-  evento.preventDefault();   
-  const correo = campoCorreo.value.trim();   
-  const posicionArroba = correo.indexOf("@");
-  const posicionPunto = correo.lastIndexOf(".");
-  const esValido = posicionArroba > 0 && posicionPunto > posicionArroba + 1 && posicionPunto < correo.length - 1;
-
-  if (esValido) {
-    campoCorreo.classList.remove("invalido");
-    mensajeSuscripcion.className = "suscripcion-msj ok";
-    mensajeSuscripcion.textContent = "¡Listo! Te escribiremos a " + correo + ".";
-    formulario.reset();
-  } else {
-    campoCorreo.classList.add("invalido");
-    mensajeSuscripcion.className = "suscripcion-msj error";
-    mensajeSuscripcion.textContent = "Escribe un correo válido, por ejemplo nombre@correo.com.";
+  function animar(el) {
+    const meta = Number(el.dataset.meta);
+    const pre = el.dataset.prefijo || "";
+    const suf = el.dataset.sufijo || "";
+    const duracion = 1600;
+    const inicio = performance.now();
+    function paso(ahora) {
+      const p = Math.min((ahora - inicio) / duracion, 1);
+      const valor = Math.round(meta * (1 - Math.pow(1 - p, 3)));
+      el.textContent = pre + valor.toLocaleString("es-PE") + suf;
+      if (p < 1) requestAnimationFrame(paso);
+    }
+    requestAnimationFrame(paso);
   }
+
+  if (reducir || !("IntersectionObserver" in window)) return;   // se queda con el valor final
+  numeros.forEach(function (n) { n.textContent = (n.dataset.prefijo || "") + "0" + (n.dataset.sufijo || ""); });
+  const observador = new IntersectionObserver(function (entradas) {
+    entradas.forEach(function (e) {
+      if (e.isIntersecting) {
+        animar(e.target);
+        observador.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.4 });
+  numeros.forEach(function (n) { observador.observe(n); });
+})();
+
+
+// ---------- PREGUNTAS FRECUENTES  ----------
+document.querySelectorAll(".faq-item").forEach(function (item) {
+  const boton = item.querySelector(".faq-p");
+  boton.addEventListener("click", function () {
+    const estabaAbierta = item.classList.contains("abierta");
+    document.querySelectorAll(".faq-item.abierta").forEach(function (otra) {
+      otra.classList.remove("abierta");
+      otra.querySelector(".faq-p").setAttribute("aria-expanded", "false");
+    });
+    if (!estabaAbierta) {
+      item.classList.add("abierta");
+      boton.setAttribute("aria-expanded", "true");
+    }
+  });
 });
+
+
+// ---------- SUSCRIPCIÓN ----------
+(function () {
+  const form = document.getElementById("form-suscripcion");
+  if (!form) return;
+  const input = document.getElementById("suscripcion-correo");
+  const msj = document.getElementById("suscripcion-msj");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const correo = input.value.trim();
+    const valido = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(correo);
+    input.classList.toggle("invalido", !valido);
+    msj.className = "suscripcion-msj " + (valido ? "ok" : "error");
+    msj.textContent = valido
+      ? "¡Listo! Te escribiremos a " + correo + "."
+      : "Escribe un correo válido, por ejemplo nombre@correo.com.";
+    if (valido) form.reset();
+  });
+})();
