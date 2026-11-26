@@ -14,91 +14,95 @@ a {
   color: inherit;
   text-decoration: none;
 }
-/*BARRA DE NAVEGACIÓN*/
-.navbar {
+/* ===== HEADER IGUAL EN TODAS LAS PÁGINAS ===== */
+html { scrollbar-gutter: stable; }
+body { margin: 0; padding: 0; }
+
+header.navbar,
+header.navbar * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+header.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 5%;
-  background-color: #000000;
-  border-bottom: 1px solid #222;
+  flex-shrink: 0;
   gap: 20px;
+  width: 100%;
   height: 64px;
+  padding: 0 5%;
+  background-color: #000;
+  border-bottom: 1px solid #222;
+  font-size: 16px;
 }
 
-.menu-izq {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-}
+header.navbar .menu-izq { display: flex; align-items: center; gap: 25px; }
+header.navbar .menu-der { display: flex; align-items: center; gap: 20px; }
+header.navbar .menu-izq img { display: block; height: 32px; width: auto; }
 
-.menu-izq img {
-  height: 32px;
-  display: block;
-}
-
-.menu-izq a, .menu-der a {
-  color: #ffffff;
+header.navbar .menu-izq a,
+header.navbar .menu-der a {
+  color: #fff;
+  font-size: 15px;
+  font-weight: normal;
   text-decoration: none;
-  font-size: 0.95rem;
   transition: color 0.2s;
 }
+header.navbar .menu-izq a:hover,
+header.navbar .menu-der a:hover { color: #ff8c00; }
 
-.menu-izq a:hover, .menu-der a:hover {
-  color: #ff8c00;
-}
-
-.busqueda {
+header.navbar .busqueda {
   display: flex;
   align-items: center;
-  background: #ffffff;
-  border-radius: 25px;
-  overflow: hidden;
   width: 35%;
   max-width: 420px;
+  height: 36px;
+  background: #fff;
+  border-radius: 25px;
+  overflow: hidden;
 }
-
-.busqueda input {
-  border: none;
-  padding: 8px 16px;
+header.navbar .busqueda input {
   width: 100%;
-  outline: none;
-  font-size: 0.9rem;
-  color: #000;
-}
-
-.busqueda button {
-  background: #ff8c00;
+  height: 100%;
+  padding: 0 16px;
   border: none;
-  color: white;
-  padding: 8px 16px;
+  border-radius: 0;
+  outline: none;
+  background: #fff;
+  color: #000;
+  font-size: 14px;
+}
+header.navbar .busqueda button {
+  height: 100%;
+  padding: 0 16px;
+  border: none;
+  border-radius: 0;
+  background: #ff8c00;
+  color: #fff;
+  font-size: 16px;
   cursor: pointer;
-  font-size: 1rem;
 }
 
-.menu-der {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.carrito {
-  position: relative;
-  font-size: 1.2rem;
-}
-
-.carrito-n {
+header.navbar .menu-der a.carrito { position: relative; font-size: 19px; }
+header.navbar .carrito-n {
   position: absolute;
   top: -8px;
   right: -10px;
-  background: #e60000;
-  color: white;
-  font-size: 0.7rem;
-  font-weight: bold;
   padding: 2px 5px;
   border-radius: 50%;
+  background: #e60000;
+  color: #fff;
+  font-size: 11px;
+  font-weight: bold;
   line-height: 1;
 }
+header.navbar .carrito-n[hidden] { display: none; }
 /* MARCAS */
 .marcas{
     background-color: #ff8000;
